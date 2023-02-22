@@ -7,10 +7,10 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
-    width: 90%;
+    width: 80%;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
    
   }
@@ -36,20 +36,22 @@
     padding: 10px;
     border:solid rgb(240, 245, 245);
     border-radius: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 40px;
+    margin-right: 30px;
     background-color: #f7f7f7;
     color: #77777e;
   }
   .logo > img {
-    width: 200px;
+    width: 150px;
     
   }
-  .cartlogo > img {
+  /* .cartlogo > svg {
     width: 50px;
     margin-left: 40px;
     
-  }
+  } */
+ 
+  
   hr {
     margin-top: 10px;
     border: 1px solid rgb(222, 220, 220);
@@ -80,6 +82,20 @@
   .dropdown1 {
     position: relative;
     display: inline-block;
+  }
+  .drop-1{
+    border: 1px solid #dbdee9;
+    padding: 7px;
+    border-radius: 7px;
+  }
+  .category-button{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  .deal-icon{
+    width: 100%;
+    padding-top: 5px;
   }
   .dropdown-content {
     display: none;
@@ -367,6 +383,9 @@
     /* Dropdown 1  */
     .Dropdownunder {
       display: none;
+    }
+    .categoryButton{
+      display: flex;
     }
     .dropdown1 {
       position: relative;
