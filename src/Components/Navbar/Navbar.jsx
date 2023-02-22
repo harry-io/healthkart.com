@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { login, Logout } from "../Redux/AuthReducer/action";
-// import { FetchProduct } from "../Redux/ProductReducer/action";
 // import LoginPopup from "./LoginPopup";
 import image from "../../Asset/logo.png"
 
@@ -10,28 +8,10 @@ import image from "../../Asset/logo.png"
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const [buttonPopup, setButtonPopup] = useState(false);
-  // const dispatch = useDispatch();
-  // const location = useLocation();
-  // const isAuth = useSelector((store) => store.authReducer.isAuth);
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-
-    // let userData = { email, password };
-  //   dispatch(login(userData)).then(() => {
-  //     navigate(location.state, { replace: true });
-  //   });
-  // };
-
-  // const handleLogout = () => {
-  //   dispatch(Logout());
-  // };
-
-
-
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+   const navigate = useNavigate();
+  // const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <div>
@@ -51,65 +31,16 @@ const Navbar = () => {
               placeholder="Search for products & brands"
               //  onClick={() => navigate('/Search')}
             />
-            {/* <button>search</button> */}
+           
           </form>
         </div>
-        {/* {isAuth && (
-          <button className="logout">
-            Logout
-          </button>
-        )} */}
+        
         <div className="loginbtn">
           <div className="LoginPopup">
             <main>
-              <button onClick={() => setButtonPopup(true)}>Login</button>
+              <button>Login</button>
             </main>
-            {/* <LoginPopup trigger={buttonPopup} setTrigger={setButtonPopup}>
-              <div className="Loginform">
-                <div className="Caraousel">
-                  <div>
-                    <img
-                      src="https://static1.hkrtcdn.com/hknext/static/media/login/slider/1.svg"
-                      alt="Logo"
-                    />
-                    <h4>
-                      Wide Range of Original & Authentic <br /> Nutritional
-                      Products
-                    </h4>
-                    <p>
-                      We Strive to Provide 100% Authentic <br /> Products to our
-                      Customer
-                    </p>
-                  </div>
-                </div>
-                <div className="Signup">
-                  <p>Login or Sign UP</p>
-                  <form >
-                    <div className="forminput">
-                      <p>Email :- </p>
-                      <input
-                        type="email"
-                        placeholder="Enter Email*"
-                        required
-                        value={email}
-                        // onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </div>
-                    <div className="forminput">
-                      <p>Password :- </p>
-                      <input
-                        type="password"
-                        placeholder="Enter Password*"
-                        required
-                        value={password}
-                        // onChange={(e) => setPassword(e.target.value)}
-                      />
-                    </div>
-                    <button>Log In</button>
-                  </form>
-                </div>
-              </div>
-            </LoginPopup> */}
+          
           </div>
         </div>
         <div className="cartlogo">
@@ -234,27 +165,27 @@ const Navbar = () => {
               <img
                 src="https://img10.hkrtcdn.com/8846/bnr_884579_o.png"
                 alt=""
-                // onClick={() => navigate("/health")}
+               
               />
               <img
                 src="https://img10.hkrtcdn.com/8846/bnr_884569_o.png"
                 alt=""
-                // onClick={() => navigate("/health")}
+               
               />
               <img
                 src="https://img10.hkrtcdn.com/10848/bnr_1084799_o.png"
                 alt=""
-                // onClick={() => navigate("/health")}
+                
               />
               <img
                 src="https://img2.hkrtcdn.com/8846/bnr_884581_o.png"
                 alt=""
-                // onClick={() => navigate("/health")}
+                
               />
               <img
                 src="https://img8.hkrtcdn.com/8846/bnr_884587_o.png"
                 alt=""
-                // onClick={() => navigate("/health")}
+               
               />
               <img
                 src="https://img2.hkrtcdn.com/10849/bnr_1084801_o.png"
@@ -278,7 +209,7 @@ const Navbar = () => {
                 <img
                   src="https://img5.hkrtcdn.com/20091/smn_image_2009054_o.png"
                   alt=""
-                  // onClick={() => navigate("/health")}
+                  
                 />
                 <p>Flash Sale</p>
               </div>
@@ -286,7 +217,7 @@ const Navbar = () => {
                 <img
                   src="https://img3.hkrtcdn.com/20091/smn_image_2009062_o.png"
                   alt=""
-                  // onClick={() => navigate("/health")}
+           
                 />
                 <p>Clearance Sale</p>
               </div>
@@ -294,7 +225,7 @@ const Navbar = () => {
                 <img
                   src="https://img7.hkrtcdn.com/20091/smn_image_2009056_o.png"
                   alt=""
-                  // onClick={() => navigate("/health")}
+                 
                 />
                 <p>Under RS2999</p>
               </div>
@@ -302,7 +233,7 @@ const Navbar = () => {
                 <img
                   src="https://img9.hkrtcdn.com/20091/smn_image_2009058_o.png"
                   alt=""
-                  // onClick={() => navigate("/health")}
+                 
                 />
                 <p>Under RS1999</p>
               </div>
