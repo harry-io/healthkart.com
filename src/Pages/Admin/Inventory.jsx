@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import InventoryProductCard from "./InventoryProductCard";
+import InventoryProductCard from "../../Components/AdminPageComponents/InventoryProductCard";
 const products = [
   {
     id: 1,
@@ -64,12 +64,14 @@ const InventoryMain = styled.div`
 `;
 const Left = styled.div`
   width: 69%;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   @media (max-width: 1024px) {
     width: 90%;
     margin: auto;
@@ -81,11 +83,21 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
   @media (max-width: 1024px) {
     display: none;
   }
 `;
 const Div = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 1rem 0;
+  padding-left: 1rem;
+
   background-color: #ffffff;
 `;
