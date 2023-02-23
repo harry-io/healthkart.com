@@ -15,8 +15,8 @@ const AdminDetails = ({ setIsOpen, isOpen }) => {
         />
       </ImageContainer>
       <Name>Admin</Name>
-      <p>Total Products</p>
-      <p>Total worth</p>
+      <P>Total Products</P>
+      <P>Total worth</P>
       <Buttons>
         <Button>HOME</Button>
         <Button>LOGOUT</Button>
@@ -49,18 +49,37 @@ const AdminPop = styled.div``;
 const ImageContainer = styled.div`
   width: 50%;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const Image = styled.img`
   width: 50%;
   border-radius: 50%;
 `;
-const Name = styled.h4``;
+const Name = styled.h4`
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+`;
+const P = styled.p`
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
 const Buttons = styled.div`
   width: 90%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `;
 const Button = styled.button`
   border: none;

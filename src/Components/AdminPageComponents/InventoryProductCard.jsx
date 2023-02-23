@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const InventoryProductCard = ({ data }) => {
+  console.log(data);
   return (
     <MainDiv>
       <Div>
@@ -24,11 +25,16 @@ const InventoryProductCard = ({ data }) => {
 
 export default InventoryProductCard;
 const MainDiv = styled.div`
-  border: 1px solid #c7c7c7;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 10px;
   width: 95%;
   margin: auto;
   padding: 1rem 0;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
 `;
 const Div = styled.div`
   width: 90%;
@@ -65,6 +71,8 @@ const P = styled.p`
   width: 100%;
 `;
 const Button = styled.button`
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   width: 20%;
   border: none;
   margin: auto;
@@ -76,5 +84,8 @@ const Button = styled.button`
   cursor: pointer;
   @media (max-width: 800px) {
     width: 90%;
+  }
+  &:hover {
+    box-shadow: #00b4b738 0px 0px 0px 3px;
   }
 `;
