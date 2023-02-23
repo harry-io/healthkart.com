@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaStarOfLife } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const LoginRight = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // https://cute-gold-agouti-coat.cyclic.app/
+  useEffect(() => {
+    axios
+      .get(`https://cute-gold-agouti-coat.cyclic.app/user`)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   const handleSubmit = () => {
     const loginDetails = {
       email,
