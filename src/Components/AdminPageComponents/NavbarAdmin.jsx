@@ -97,7 +97,8 @@ const MainDiv = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   position: fixed;
   top: 0;
   background-color: white;
@@ -156,7 +157,7 @@ const NavLink = styled(Link)`
   align-items: center;
   gap: 10px;
   &:hover {
-    color: #1d1d1d;
+    color: #00b5b7;
   }
 `;
 const NavLinkB = styled(Link)`

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import EditProductCard from "./EditProductCard";
-import InventoryProductCard from "./InventoryProductCard";
+import NavbarAdmin from "../../Components/AdminPageComponents/NavbarAdmin";
+import EditProductCard from "../../Components/AdminPageComponents/EditProductCard";
 const products = [
   {
     id: 1,
@@ -43,6 +43,7 @@ export const EditProduct = () => {
   };
   return (
     <>
+      <NavbarAdmin />
       <Div>
         <Input
           type="number"
@@ -95,8 +96,12 @@ const Button = styled.button`
   background-color: #00b5b7;
   color: #fff;
   font-size: 14px;
+  cursor: pointer;
   @media (max-width: 1024px) {
     width: 30%;
+  }
+  &:hover {
+    box-shadow: rgba(0, 247, 255, 0.3) 0px 0px 0px 3px;
   }
 `;
 const EditProductMain = styled.div`

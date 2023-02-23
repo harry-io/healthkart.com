@@ -77,11 +77,8 @@ const ProductCardMain = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
   padding: 0.8rem 0 1.6rem 0;
-
-  &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  }
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   @media (max-width: 1024px) {
     flex-direction: column;
   }
@@ -115,7 +112,7 @@ const Input = styled.input`
   caret-color: #00b5b7;
   padding: 0 1.5rem;
   &:focus {
-    border: 1px solid #00b5b7;
+    box-shadow: #00b4b730 0px 0px 0px 3px;
   }
 `;
 const Label = styled.label`
@@ -149,6 +146,10 @@ const Button = styled.button`
   background-color: #00b5b7;
   color: #fff;
   font-size: 1rem;
+  cursor: pointer;
+  &:hover {
+    box-shadow: #00b4b730 0px 0px 0px 3px;
+  }
 `;
 const Delete = styled.button`
   border: none;
@@ -159,4 +160,8 @@ const Delete = styled.button`
   background-color: #184e68;
   color: #fff;
   font-size: 1rem;
+  cursor: pointer;
+  &:hover {
+    box-shadow: #184d6847 0px 0px 0px 3px;
+  }
 `;
