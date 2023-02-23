@@ -9,6 +9,7 @@ const LoginRight = () => {
   const [password, setPassword] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   //
+
   const handleSubmit = () => {
     const userDetails = {
       email,
