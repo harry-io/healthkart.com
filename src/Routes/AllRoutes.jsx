@@ -10,7 +10,7 @@ import { Search } from "../Pages/Search/Search";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route path="/" element={<Homepage/>} />
       <Route path="/navbar" element={<Navbar />} />
       <Route path="/Search" element={<Search />} />
       <Route path="/admin/inventory" element={<Admin />} />
