@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaStarOfLife } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { loginSuccess } from "../../Redux/Auth/actions";
+import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginRight = () => {
+  const [disable, setDisable] = useState(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [credData, setCredData] = useState([]);
   // https://cute-gold-agouti-coat.cyclic.app/
   useEffect(() => {
     axios
@@ -15,23 +23,57 @@ const LoginRight = () => {
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   }, []);
-  const handleSubmit = () => {
-    const loginDetails = {
-      email,
-      password,
-    };
+  //
+  useEffect(() => {
+    setDisable(true);
+    if (password.length > 7) {
+      setDisable(false);
+    }
+  }, [password]);
+  //
+  const matchData = (data) => {
+    for (let key in data) {
+      if (data[key].email === email && data[key].password === password) {
+        dispatch(loginSuccess(data[key]));
+        setDisable(false);
+        toast("logged in");
+        navigate("/");
+        return;
+      }
+    }
+    toast("Account not found !");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
     //
-    // FUNCTION TO CHECK IF THE CREDENTIALS MATCH, IF NOT THEN REDIRECT TO SIGNUP PAGE AFTER NOTIFYING THAT THE USER WITH THOSE DETAILS DO NOT EXIST
+    //
+    axios
+      .get(`https://63f874bc1dc21d5465bf9ff4.mockapi.io/vigor`)
+      .then((res) => {
+        setEmail("");
+        setPassword("");
+        setCredData(res.data);
+        matchData(res.data);
+      });
   };
   return (
     <LoginRightMain>
       <Form onSubmit={handleSubmit}>
         <FormHeading>Login</FormHeading>
         <Label>Email</Label>
-        <Input />
+        <Input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <Label>Password</Label>
-        <Input />
-        <Button>LOGIN</Button>
+        <InputPwd
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button disabled={disable}>LOGIN</Button>
+
         <Desc>
           <FaStarOfLife style={{ color: "red", marginRight: "5px" }} />
           {`You may receive SMS updates from Healthkart and can opt out at any
@@ -106,6 +148,26 @@ const Input = styled.input`
   height: 51px;
   border-radius: 10px;
   font-size: 16px;
+  padding-left: 1rem;
+  caret-color: #00b5b7;
+  outline: none;
+  &:focus {
+    border: 1px solid #00b5b7;
+  }
+`;
+const InputPwd = styled.input`
+  border: 1px solid #dbdee9;
+  border-radius: 0 8px 8px 0;
+  height: 51px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding-left: 1rem;
+  caret-color: #00b5b7;
+  outline: none;
+  color: #00b5b7;
+  &:focus {
+    border: 1px solid #00b5b7;
+  }
 `;
 const Button = styled.button`
   height: 51px;
@@ -115,4 +177,8 @@ const Button = styled.button`
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  &:disabled {
+    background-color: #00b4b744;
+    cursor: not-allowed;
+  }
 `;
