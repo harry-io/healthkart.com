@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import NavbarAdmin from "../../Components/AdminPageComponents/NavbarAdmin";
 import EditProductCard from "../../Components/AdminPageComponents/EditProductCard";
+import axios from "axios";
+import {
+  deleteAdminData,
+  getAdminData,
+  patchAdminData,
+} from "../../Redux/Admin/actions";
+import { useDispatch, useSelector } from "react-redux";
 const products = [
   {
     id: 1,
@@ -34,12 +41,25 @@ const products = [
 ];
 
 export const EditProduct = () => {
+  const { isLoading, isError, adminProducts } = useSelector(
+    (store) => store.adminReducer
+  );
+  const dispatch = useDispatch();
   const [searchId, setSearchId] = useState();
   //
   const handleSearch = () => {
     let id = searchId;
     //
     // search according to the id function here
+  };
+  //
+  const handlePatch = (id, patchObj) => {
+    dispatch(patchAdminData(id, patchObj)).then(() => dispatch(getAdminData));
+  };
+  //
+  //
+  const handleDelete = (id) => {
+    dispatch(deleteAdminData(id)).then(() => dispatch(getAdminData));
   };
   return (
     <>
@@ -54,8 +74,13 @@ export const EditProduct = () => {
         <Button onClick={handleSearch}>SEARCH</Button>
       </Div>
       <EditProductMain>
-        {products.map((product) => (
-          <EditProductCard key={product.id} data={product} />
+        {adminProducts.map((product) => (
+          <EditProductCard
+            key={product.id}
+            data={product}
+            handleDelete={handleDelete}
+            handlePatch={handlePatch}
+          />
         ))}
       </EditProductMain>
     </>

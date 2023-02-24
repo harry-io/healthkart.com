@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const InventoryProductCard = ({ data }) => {
-  console.log(data);
   return (
     <MainDiv>
       <Div>
