@@ -1,9 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { HiViewGridAdd } from "react-icons/hi";
 import NavbarAdmin from "../../Components/AdminPageComponents/NavbarAdmin";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
+  const [title, setTitle] = useState("");
+  const [brand, setBrand] = useState("");
+  const [mrp, setMrp] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [disable, setDisable] = useState(true);
+  //
+  useEffect(() => {
+    setDisable(true);
+  }, []);
+  //
+  const handleDiscountChange = (e) => {
+    setDiscount(+e.target.value);
+    //
+    setPrice(mrp - (mrp * discount) / 100);
+  };
+  //
+  const handleImageChange = (e) => {
+    let actualImage = e.target.files[0];
+
+    //
+    let form = new FormData();
+    form.append("image", actualImage);
+    //
+    axios
+      .post(
+        `https://api.imgbb.com/1/upload?key=5e73f0dc624635d020cdfd9d1e493763`,
+        form
+      )
+      .then((res) => {
+        setImageUrl(res.data.data.display_url);
+        console.log(res.data.data.display_url);
+      })
+      .then(() => setDisable(false));
+  };
+  //
+  //
+  //
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //
+    let productObj = {
+      image: imageUrl,
+      Title: title,
+      brand: brand,
+      stars: 0,
+      reviews: 0,
+      mrp: +mrp,
+      price: +price,
+    };
+    //
+    //
+    axios
+      .post(`https://636bda08ad62451f9fbd8076.mockapi.io/rigo`, productObj)
+      .then(() => {
+        toast("Product added successfully !");
+      });
+    //
+    setBrand("");
+    setCategory("");
+    setDiscount(0);
+    setImageUrl("");
+    setMrp(0);
+    setPrice(0);
+    setTitle("");
+  };
+  //
   return (
     <>
       <NavbarAdmin />
@@ -13,25 +84,53 @@ const AddProduct = () => {
           {"ADD A NEW PRODUCT"}
         </Heading>
         <Desc>Adding a new product is just a few steps away.</Desc>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <LabelA>Title</LabelA>
-          <Input type="text" placeholder="Product Title" />
-          <LabelA>Description</LabelA>
-          <Input type="text" placeholder="Product Description" />
-          <LabelA>Price</LabelA>
-          <Input type="number" placeholder="Product Price" />
+          <Input
+            type="text"
+            placeholder="Product Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <LabelA>Brand</LabelA>
+          <Input
+            type="text"
+            placeholder="Product Brand"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+          />
+          <LabelA>MRP</LabelA>
+          <Input
+            type="number"
+            placeholder="Product MRP"
+            value={mrp}
+            onChange={(e) => setMrp(+e.target.value)}
+          />
+          <LabelA>Discount in %</LabelA>
+          <Input
+            type="number"
+            placeholder="Percent of discount"
+            value={discount}
+            onChange={handleDiscountChange}
+          />
+          <LabelA>Final Price</LabelA>
+          <Input type="number" placeholder="Price" value={price} readOnly />
           <LabelA>Category</LabelA>
-          <Select>
+          <Select
+            value={category}
+            onChange={(e) => setDiscount(e.target.value)}
+          >
+            <option value="whey_proteins">Whey Proteins</option>
             <option value="sports_nutrition">Sports Nutrition</option>
             <option value="vitamins_supplements">Vitamins & Supplements</option>
             <option value="ayurveda_herbs">Ayurveda & Herbs</option>
             <option value="health_drinks">Health Food & Drinks</option>
           </Select>
           <Label>
-            <InputImage type="file" />
+            <InputImage type="file" onChange={handleImageChange} />
             Choose Image
           </Label>
-          <Button>ADD</Button>
+          <Button disabled={disable}>ADD</Button>
         </Form>
       </MainContainer>
     </>
@@ -56,7 +155,7 @@ const MainContainer = styled.div`
     width: 90%;
   }
 `;
-const Form = styled.div`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -153,5 +252,9 @@ const Button = styled.button`
   }
   &:hover {
     box-shadow: #00b4b738 0px 0px 0px 3px;
+  }
+  &:disabled {
+    background-color: #00b4b744;
+    cursor: not-allowed;
   }
 `;
