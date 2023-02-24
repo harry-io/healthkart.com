@@ -4,10 +4,16 @@ import { MainBanner, midBanner,lastBanner } from "../../Components/SliderImages/
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 const Homepage = () => {
   return <div>
     <Navbar/>
-    //top slider
+    {/* //top slider */}
+    
+      <div class="info-section1">
+        <span>App Sale Is Now Live</span>
+      </div>
+      
     <div className="topBanner">
         <Carousel infinitLoop autoPlay>
           {MainBanner.length > 0 &&
@@ -21,7 +27,7 @@ const Homepage = () => {
         </Carousel>
       </div>
 
-      //mid slider
+      {/* //mid slider */}
     <div className="commonDiv sliderimgLinerbg">
         <div className="sliderimg">
           <div id="I_Like_You_slider">
@@ -399,6 +405,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
 
   </div>
 
