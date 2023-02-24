@@ -1,0 +1,227 @@
+.main {
+    width: 80%;
+    height: 500px;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    gap: 2%;
+}
+.images {
+    width: 50%;
+    /* border: 1px solid blue; */
+    display: flex;
+
+}
+.images img {
+    width: 90%;
+    height: 90%;
+}
+.mainImage {
+    width: 80%;
+    /* border: 1px solid red; */
+    background-color: #F7F7F7;
+}
+.sideImage {
+    width: 20%;
+    /* border: 1px solid green; */
+    overflow:auto;
+    scrollbar-width: 1px;
+}
+.sideImage::-webkit-scrollbar{
+    display: none;
+}
+.sideImage img {
+    width: 80%;
+    height: 20%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+.details{
+    width: 50%;
+    /* border: 1px solid black; */
+    text-align: left;
+    line-height: 15px;
+}
+
+.premium {
+    width: 50%;
+    /* margin-left: 5%; */
+    margin-bottom: 15px;
+    background-color: #F5F5F5;
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.freebie {
+    width: 60%;
+    height: 100px;
+    display: flex;
+    border: 1px solid #d4d4d4;
+    align-items: center;
+    line-height: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 7px;
+}
+.freeImg {
+    width: 20%;
+    border-right: 1px solid #d4d4d4;
+}
+.freebie img {
+    height: 60%;
+    width: 100%;
+}
+
+.buttons {
+    margin-top: 50px;
+ 
+}
+
+.minus {
+    height: 40px;
+    width: 30px;
+    background-color: #F7F7F7;
+    font-size: 1.2rem;
+    border: 1px solid #d4d4d4;
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.count {
+    background-color: transparent;
+    height: 40px;
+    width: 30px;
+    font-size: 1.2rem;
+    border: 1px solid #d4d4d4;
+    border-left: none;
+    border-right: none;
+    color: #00B5B7;
+}
+
+.plus {
+     height: 40px;
+    width: 30px;
+    background-color: #F7F7F7;
+    font-size: 1.2rem;
+    border: 1px solid #d4d4d4;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 20px;
+}
+
+.addToCart {
+    width: 200px;
+    height: 45px;
+    background-color: white;
+    color: orange;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid orange;
+    border-radius: 10px;
+}
+
+.quick {
+    width: 150px;
+    height: 45px;
+    background-color: orange;
+    color: white;
+    border: 1px solid orange;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+
+.weights {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 50px;
+    height: 500px;
+}
+
+.prodBene {
+    width: 40%;
+    height: auto;
+    border-top: 1px solid #DFE2EC;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: 20px;
+}
+
+.helps {
+    text-align: left;
+    padding: 20px;
+    padding-top: 20px;
+    line-height: 15px;
+    border-left: 1px solid #DFE2EC;
+    border-right: 1px solid #DFE2EC;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.helps img {
+    margin-right: 15px;
+}
+.helps p {
+    font-size: 14px;
+}
+
+.nutrients{
+    line-height: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border: 1px solid #DFE2EC;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.nutrients p{
+    font-size: 12px;
+}
+
+
+.kilo {
+    width: 40%;
+    height: 100%;
+    border: 1px solid yellow;
+    margin-left: 30px;
+}
+
+.convertTop {
+    width: 50%;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+.convertTop h3{
+    margin-left: 30px;
+}
+.kg {
+    margin-left: 20px;
+    height: 30px;
+    width: 45px;
+    background-color: #00B5B7;
+    color: white;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.lb {
+    height: 30px;
+    width: 45px;
+    background-color: white;
+    border: 1px solid #00B5B7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: gray;
+}
