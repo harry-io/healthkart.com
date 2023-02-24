@@ -11,7 +11,7 @@ const InventoryProductCard = ({ data }) => {
           <Image src={data.image} alt="img" />
         </ImgDiv>
         <DataDiv>
-          <P>{data.title}</P>
+          <P>{data.Title}</P>
           <P>₹ {data.price}</P>
         </DataDiv>
 
@@ -42,6 +42,7 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   @media (max-width: 800px) {
     flex-direction: column;
   }
