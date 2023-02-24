@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styles from './SinglePage.module.css';
 
 export const SinglePage = () => {
 
     const [count,setCount] = useState(1);
+    const [data,setData] = useState([]);
  
+    const prod = useSelector((store) => store.product);
+    var carts = JSON.parse(localStorage.getItem('cart')) || [];
+
+    useEffect(() => {
+        const prodData = prod.find((el) => el.id === +id)
+        prodData && setData(prodData)
+    })
+
+    const handleCart = () => {
+        carts.push(data);
+        localStorage.setItem('cart',JSON.stringify(carts))
+    }
+
 
 
   return (
@@ -26,9 +41,9 @@ export const SinglePage = () => {
 
         </div>
         <div className={styles.details}>
-        <h2>MuscleBlaze Biozyme Whey protein, 2kg</h2>
+        <h2>{data.Title}</h2>
         <h2>Rich Milk Chocolate</h2>
-        <h3>₹ 3545</h3>
+        <h3>₹ {data.price}</h3>
         <p>Get it by 1 march</p>
        
         <button className={styles.premium}>₹ 35455 for Premium Member</button>
@@ -48,7 +63,7 @@ export const SinglePage = () => {
             <button className={styles.minus} onClick={() => setCount(count-1)}>-</button>
             <button className={styles.count}>{count}</button>
             <button className={styles.plus} onClick={() => setCount(count+1)}>+</button>
-            <button className={styles.addToCart}>Add to Cart</button>
+            <button className={styles.addToCart} onClick={handleCart} >Add to Cart</button>
             <button className={styles.quick}>Quick Buy</button>
         </div>
        
