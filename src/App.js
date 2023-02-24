@@ -1,10 +1,10 @@
 import React from 'react'
-import AllRoutes from './Routes/AllRoutes'
-
+import CartPage from './Pages/Cart/CartPage'
 export const App = () => {
   return (
     <div>
-      <AllRoutes/>
+      {/* <AllRoutes/> */}
+      <CartPage/>
     </div>
   )
 }
