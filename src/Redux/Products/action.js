@@ -12,6 +12,15 @@ export const productFailAction = () => {
     return {type: GET_PRODUCT_FAIl}
 }
 
-export const getProduct = () => {
-    
+export const getProduct = (dispatch) => {
+    dispatch(productReqAction());
+
+        return axios.get('https://cute-gold-agouti-coat.cyclic.app/proteins')
+        .then((res) => {
+            dispatch(productSuccAction(res.data))
+        })
+        .catch((err) => {
+            console.log(err)
+            dispatch(productFailAction())
+        })
 }
