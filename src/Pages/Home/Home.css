@@ -7,6 +7,22 @@
    
     padding: 1rem;
   }
+  .info-section1{
+    width:100%;
+    height: 50px;
+    padding-top:10px;
+    text-align: center;
+    background-color: #effbfc;
+    /* border: 1px solid teal; */
+  }
+  .info-section1 span{
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+   
+    
+    /* border: 1px solid  rgb(11, 11, 11); */
+  }
   .sliderimgLinerbg {
   
     height: 100%;

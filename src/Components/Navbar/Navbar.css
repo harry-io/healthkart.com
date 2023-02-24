@@ -12,7 +12,11 @@
     margin-top: 15px;
     margin-bottom: 15px;
     cursor: pointer;
-   
+
+  }
+  form{
+    display: flex;
+    
   }
   main>button {
     width: 120px;
@@ -43,15 +47,15 @@
   }
   .logo > img {
     width: 150px;
-    
+
   }
   /* .cartlogo > svg {
     width: 50px;
     margin-left: 40px;
-    
+
   } */
- 
-  
+
+
   hr {
     margin-top: 10px;
     border: 1px solid rgb(222, 220, 220);
@@ -77,7 +81,7 @@
     padding: 10px;
     border-radius: 5px;
   }
-  
+
   /* DropDown menu */
   .dropdown1 {
     position: relative;
@@ -92,11 +96,10 @@
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    text-decoration: none;
+    /* border: 1px solid teal; */
   }
-  .deal-icon{
-    width: 100%;
-    padding-top: 5px;
-  }
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -130,7 +133,7 @@
   .dropdown1:hover .dropdown-content {
     display: block;
   }
-  
+
   /* Drop Down 2 */
   .dropdown2 {
     position: relative;
@@ -165,18 +168,18 @@
   }
   .dropdown-content23 p:hover {
     color: teal;
-  
+
   }
   .dropdown2:hover .dropdown-content2 {
     display: block;
   }
-  
+
   /* Dropdown css */
   .dropdown3 {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content3 {
     display: none;
     position: absolute;
@@ -186,7 +189,7 @@
     z-index: 1;
     padding: 20px;
   }
-  
+
   .dropdown-content3>div>img {
     width: 100%;
   }
@@ -195,16 +198,16 @@
     gap: 20px;
     grid-template-columns: repeat(2,1fr);
   }
-  
+
   .dropdown-content3 img:hover {background-color: #b17171}
-  
+
   .dropdown3:hover .dropdown-content3 {
     display: block;
   }
-  
-  
-  
-  
+
+
+
+
   /*  Next Drop Down Third*/
   .Deals {
     display: flex;
@@ -221,7 +224,7 @@
   .dropdown4 > div {
     padding: 20px;
   }
-  
+
   .dropdown-content4 {
     display: none;
     position: absolute;
@@ -239,18 +242,18 @@
   .dropdown-content4 p:hover {
     color: teal;
   }
-  
+
   .dropdown4:hover .dropdown-content4 {
     display: block;
   }
-  
+
   /*  Next Drop Down last*/
-  
+
   .dropdown7 {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content7 {
     display: none;
     position: absolute;
@@ -281,11 +284,11 @@
   .dropdown-content7 p:hover {
     color: teal;
   }
-  
+
   .dropdown7:hover .dropdown-content7 {
     display: block;
   }
-  
+
   /* Login CSS */
   .Loginform{
     display: flex;
@@ -299,18 +302,18 @@
     display: grid;
     width: 100%;
     padding: 10px;
-  
+
   }
   .Caraousel>div>h4{
     margin: 20px;
   }
   .Caraousel>div>img{
     width: 100%;
-    
+
   }
   .Loginform>div{
     display: grid;
-    
+
   }
   .Signup>p{
     margin-bottom: 50px;
@@ -340,7 +343,7 @@
     padding:10px;
     border-radius: 20px;
   }
-  
+
   @media screen and (max-width: 1080px) {
     .navbar {
       margin: auto;
@@ -398,18 +401,18 @@
   /* Dropdown 2 */
   .dropdown-content2 {
     min-width: 300px;
-  
+
   }
-  
-  
+
+
     /* Drop Down 4 */
-  
+
     .dropdown-content4 {
       min-width: 200px;
     }
-  
+
     /* Next DropDown */
-  
+
     .dropdown-content7 {
       min-width: 200px;
     }
@@ -421,7 +424,7 @@
     .support2 > p:nth-child(2) {
       font-size: 15px;
     }
-  
+
     /* Login  */
     .forminput>input{
       width: 180px;
@@ -429,9 +432,9 @@
     .Signup button{
       width: 100px;
     }
-  
+
   }
-  
+
   @media only screen and (max-width: 760px) {
     .loginbtn > button {
       width: 80px;
@@ -459,9 +462,9 @@
       gap: 20px;
       min-width: 400px;
     }
-  
+
     /* Next DropDown */
-  
+
     .dropdown-content7 {
       min-width: 150px;
     }
@@ -476,4 +479,3 @@
       font-size: 10px;
     }
   }
-  

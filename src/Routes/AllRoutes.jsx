@@ -8,12 +8,14 @@ import Homepage from "../Pages/Home/Homepage";
 import Login from "../Pages/Login/Login";
 import { Search } from "../Pages/Search/Search";
 import Signup from "../Pages/Signup/Signup";
+import Footer from "../Components/Footer/Footer";
 
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/navbar" element={<Navbar />} />
+      <Route path="/footer" element={<Footer />} />
       <Route path="/Search" element={<Search />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
