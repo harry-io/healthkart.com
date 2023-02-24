@@ -1,23 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import InventoryProductCard from "../../Components/AdminPageComponents/InventoryProductCard";
+import { getAdminData } from "../../Redux/Admin/actions";
 
 const Inventory = () => {
-  const [productData, setProductData] = useState([]);
+  const { isLoading, isError, adminProducts } = useSelector(
+    (store) => store.adminReducer
+  );
+  const dispatch = useDispatch();
   //
   useEffect(() => {
     //
-    axios
-      .get(`https://636bda08ad62451f9fbd8076.mockapi.io/rigo`)
-      .then((res) => {
-        setProductData(res.data.items);
-      });
+    dispatch(getAdminData);
     //
   }, []);
   return (
     <InventoryMain>
-      {productData.length <= 0 ? (
+      {adminProducts.length <= 0 ? (
         <Nothing>
           <Img
             src="https://static1.hkrtcdn.com/hknext/static/media/cart/empty-cart-new.svg"
@@ -26,8 +27,8 @@ const Inventory = () => {
         </Nothing>
       ) : (
         <Left>
-          {productData.length > 0 &&
-            productData.map((product) => (
+          {adminProducts.length > 0 &&
+            adminProducts.map((product) => (
               <InventoryProductCard key={product.id} data={product} />
             ))}
         </Left>
@@ -38,7 +39,7 @@ const Inventory = () => {
           <h2>Inventory Summary</h2>
         </Div>
         <Div>
-          <p>Total Products : {productData.length}</p>
+          <p>Total Products : {adminProducts.length}</p>
         </Div>
       </Right>
     </InventoryMain>
