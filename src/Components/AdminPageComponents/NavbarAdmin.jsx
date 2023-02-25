@@ -7,8 +7,10 @@ import { FaEdit, FaUserAlt } from "react-icons/fa";
 import AdminDetails from "./AdminDetails";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
+import { useSelector } from "react-redux";
 
 const NavbarAdmin = () => {
+  //
   const [isOpen, setIsOpen] = useState(false);
   const [menu, setMenu] = useState(false);
   //
@@ -174,9 +176,15 @@ const NavLinkB = styled(Link)`
 `;
 const AdminPicContainer = styled.div`
   margin-top: 2rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 `;
 const AdminName = styled.h4`
   margin-top: -1rem;
+  text-align: center;
 `;
 const Buttons = styled.div`
   display: flex;

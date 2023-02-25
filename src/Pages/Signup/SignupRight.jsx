@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const LoginRight = () => {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ const LoginRight = () => {
     axios
       .post(`https://63f874bc1dc21d5465bf9ff4.mockapi.io/vigor`, userDetails)
       .then((res) => {
+        toast("Account created successfully !");
         navigate("/login");
       })
       .catch((err) => console.log(err));

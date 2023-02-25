@@ -5,11 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { loginSuccess } from "../../Redux/Auth/actions";
-import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const LoginRight = () => {
+  const store = useSelector((store) => store.authReducer);
+  //
   const [disable, setDisable] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,12 +19,6 @@ const LoginRight = () => {
   const [password, setPassword] = useState("");
   const [credData, setCredData] = useState([]);
   // https://cute-gold-agouti-coat.cyclic.app/
-  useEffect(() => {
-    axios
-      .get(`https://cute-gold-agouti-coat.cyclic.app/user`)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-  }, []);
   //
   useEffect(() => {
     setDisable(true);

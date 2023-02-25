@@ -9,6 +9,7 @@ import {
   patchAdminData,
 } from "../../Redux/Admin/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 const products = [
   {
     id: 1,
@@ -60,6 +61,7 @@ export const EditProduct = () => {
   //
   const handleDelete = (id) => {
     dispatch(deleteAdminData(id)).then(() => dispatch(getAdminData));
+    toast("Deleted successfully !");
   };
   return (
     <>
