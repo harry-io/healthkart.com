@@ -1,0 +1,39 @@
+.container {
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(115, 115, 115);
+    border-radius: 10px;
+    /* margin: auto; */
+    /* margin-top: 50px; */
+    /* transition: all 1s cubic-bezier(0,1,0,1); */
+    position:fixed;
+    top: 10%;
+    /* left: 10%; */
+
+}
+
+.list {
+    max-height: 0;
+    display: none;
+    transition: all 0.5s;
+
+}
+.list.show {
+    height: auto;
+    display: block;
+    transition: all 0.5s;
+
+}
+
+@media (min-width:300px) and (max-width:518px) {
+    .container {
+        width: 200px;
+
+    }
+}
+
+@media (min-width:519px) and (max-width:800px) {
+    .container {
+       width: 100px;
+    }
+}

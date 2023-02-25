@@ -1,13 +1,15 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
+import { ProductList } from "./Pages/ProductList/ProductList";
 import AllRoutes from "./Routes/AllRoutes";
 
 export const App = () => {
   return (
     <div>
       <AllRoutes />
-      <StyledToastContainer />
+      {/* <StyledToastContainer /> */}
+      {/* <ProductList /> */}
     </div>
   );
 };

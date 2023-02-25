@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from './SinglePage.module.css';
+import {useParams} from 'react-router-dom'
 
 export const SinglePage = () => {
 
     const [count,setCount] = useState(1);
     const [data,setData] = useState([]);
+
+    const {id} = useParams()
  
     const prod = useSelector((store) => store.product);
     var carts = JSON.parse(localStorage.getItem('cart')) || [];
@@ -35,7 +38,7 @@ export const SinglePage = () => {
                 <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
             </div>
             <div className={styles.mainImage}>
-                <img src="https://img10.hkrtcdn.com/12090/prd_1208939-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src={data.image[0]} alt="" />
             </div>
           
 
@@ -122,7 +125,7 @@ export const SinglePage = () => {
                     </div>
                     <div className={styles.convertBottom}>
                         <div>
-                            
+                         
                         </div>
                     </div>
                 </div>

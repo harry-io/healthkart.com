@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 
 export const ProductCard = ({id,Title,image,price,stars,reviews}) => {
