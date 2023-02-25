@@ -14,7 +14,6 @@ export const SinglePage = () => {
     const [count,setCount] = useState(1);
     const [data,setData] = useState([]);
 
-    const {id} = useParams()
  
     const prod = useSelector((store) => store);
     console.log(store)

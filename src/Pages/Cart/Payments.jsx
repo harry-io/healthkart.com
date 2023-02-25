@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
 
-const CartPage = () => {
+const Payments = () => {
     const [upiId, setUpiId] = useState("");
 
     const handleButtonClick = (text) => {
@@ -116,4 +116,4 @@ const CartPage = () => {
   )
 }
 
-export default CartPage
+export default Payments

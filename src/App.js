@@ -10,7 +10,7 @@ export const App = () => {
 
        <AllRoutes />
        <StyledToastContainer />  
-        <ProductList/>
+        {/* <ProductList/> */}
 
     </div>
   );
