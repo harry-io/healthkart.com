@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import image from "../../Asset/logo.png"
+ import image from "../../Asset/logo.png"
 import {
   Box,
   Container,
@@ -129,3 +129,4 @@ export default function Footer() {
     </Box>
   );
 }
+
