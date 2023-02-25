@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector} from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { store } from '../../Redux/store';
 import styles from './SinglePage.module.css';
 
@@ -19,7 +19,7 @@ export const SinglePage = () => {
     const [dis,setDis] = useState(false)
  
     const [change,setChange] = useState("");
- 
+    const navigate = useNavigate();
     const prod = useSelector((store) => store);
  
     var carts = JSON.parse(localStorage.getItem('cart')) || [];
@@ -94,7 +94,9 @@ var main = data.image
             <button className={styles.count}>{count}</button>
             <button className={styles.plus} onClick={() => setCount(count+1)}>+</button>
             <button className={styles.addToCart} onClick={handleCart} disabled={dis == true} >Add to Cart</button>
-            <button className={styles.quick}>Quick Buy</button>
+            <Link to={`/payments/${id}`} >
+            <button className={styles.quick} >Quick Buy</button>
+            </Link>
         </div>
        
         </div>
