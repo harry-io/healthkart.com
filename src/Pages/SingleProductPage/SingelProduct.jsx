@@ -1,23 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector} from 'react-redux';
+import { useLocation, useParams } from 'react-router-dom';
+import { store } from '../../Redux/store';
 import styles from './SinglePage.module.css';
 
-export const SinglePage = () => {
+import axios from 'axios';
 
+export const SinglePage = () => {
+    const {id}=useParams()
+    console.log(id)
+    const location=useLocation()
+    console.log(location)
     const [count,setCount] = useState(1);
     const [data,setData] = useState([]);
+
+    const {id} = useParams()
  
-    const prod = useSelector((store) => store.product);
+    const prod = useSelector((store) => store);
+    console.log(store)
+    console.log(prod)
     var carts = JSON.parse(localStorage.getItem('cart')) || [];
 
-    useEffect(() => {
-        const prodData = prod.find((el) => el.id === +id)
-        prodData && setData(prodData)
-    })
 
+    // useEffect(() => {
+    //     const prodData = prod.find((el) => el.id === +id)
+    //     console.log(prodData)
+    //     prodData && setData(prodData)
+
+    // },[])
+useEffect(()=>{
+    axios.get(`https://cute-gold-agouti-coat.cyclic.app/proteins/${id}`).then((res)=>{
+        setData(res.data)
+        console.log(res.data)
+    })
+},[])
     const handleCart = () => {
         carts.push(data);
         localStorage.setItem('cart',JSON.stringify(carts))
+        console.log(carts)
     }
 
 
@@ -35,7 +55,7 @@ export const SinglePage = () => {
                 <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
             </div>
             <div className={styles.mainImage}>
-                <img src="https://img10.hkrtcdn.com/12090/prd_1208939-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src={data.image[0]} alt="" />
             </div>
           
 
@@ -122,7 +142,7 @@ export const SinglePage = () => {
                     </div>
                     <div className={styles.convertBottom}>
                         <div>
-                            
+                         
                         </div>
                     </div>
                 </div>

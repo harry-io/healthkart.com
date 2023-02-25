@@ -8,6 +8,8 @@ const CartPage = () => {
     const handleButtonClick = (text) => {
       setUpiId(`${upiId}${text}`);
     };
+    const carts=JSON.parse(localStorage.getItem("cart"))||[]
+    console.log(carts)
   return (
   
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
