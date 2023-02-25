@@ -1,4 +1,6 @@
+import axios from "axios"
 import { GET_PRODUCT_FAIl, GET_PRODUCT_REQ, GET_PRODUCT_SUCC } from "./actionType"
+
 export const productReqAction = () => {
     return {type:GET_PRODUCT_REQ}
 }

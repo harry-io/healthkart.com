@@ -17,7 +17,7 @@ import { SinglePage } from "../Pages/SingleProductPage/SingelProduct";
 
 import Payments from "../Pages/Cart/Payments";
 import Cart from "../Pages/Cart/Cart";
-import CartPage from "../Pages/Cart/CartPage";
+
 
 
 
