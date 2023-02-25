@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import { Search } from "../Pages/Search/Search";
 import Signup from "../Pages/Signup/Signup";
 import Footer from "../Components/Footer/Footer";
+import OrderSuccessfull from "../Pages/OrderSuccessfull";
 
 const AllRoutes = () => {
   return (
@@ -22,6 +23,8 @@ const AllRoutes = () => {
       <Route path="/admin/inventory" element={<Admin />} />
       <Route path="/admin/add_product" element={<AddProduct />} />
       <Route path="/admin/edit_product" element={<EditProduct />} />
+      <Route path="/confirm" element={<OrderSuccessfull />} />
+
     </Routes>
   );
 };
