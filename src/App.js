@@ -1,17 +1,20 @@
 import React from "react";
-import { ToastContainer } from "react-toastify";
+ import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
+import Payment from "./Pages/Cart/Payment";
+import { ProductList } from "./Pages/ProductList/ProductList";
 import AllRoutes from "./Routes/AllRoutes";
 
 export const App = () => {
   return (
     <div>
-      <AllRoutes />
-      <StyledToastContainer />
+       <AllRoutes />
+       <StyledToastContainer />  
+        <ProductList/>
     </div>
   );
 };
-//
+
 const StyledToastContainer = styled(ToastContainer)`
   &&&.Toastify__toast-container {
   }
