@@ -1,5 +1,4 @@
 import { GET_PRODUCT_FAIl, GET_PRODUCT_REQ, GET_PRODUCT_SUCC } from "./actionType"
-
 export const productReqAction = () => {
     return {type:GET_PRODUCT_REQ}
 }
@@ -12,11 +11,12 @@ export const productFailAction = () => {
     return {type: GET_PRODUCT_FAIl}
 }
 
-export const getProduct = (dispatch) => {
+export const getProduct = (param) => (dispatch) => {
     dispatch(productReqAction());
 
-        return axios.get('https://cute-gold-agouti-coat.cyclic.app/proteins')
+        return axios.get('https://cute-gold-agouti-coat.cyclic.app/proteins',param)
         .then((res) => {
+            console.log(res.data)
             dispatch(productSuccAction(res.data))
         })
         .catch((err) => {

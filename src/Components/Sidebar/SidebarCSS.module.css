@@ -1,0 +1,47 @@
+.container {
+    width: 20%;
+    height: auto;
+    border: 1px solid rgb(115, 115, 115);
+    border-radius: 10px;
+    /* margin: auto; */
+    /* margin-top: 50px; */
+    /* transition: all 1s cubic-bezier(0,1,0,1); */
+    position:fixed;
+    top: 10%;
+    left: 5%;
+    font-size: 0.8rem;
+    /* align-items: center; */
+    gap: 20px;
+}
+.butt {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.list {
+    max-height: 0;
+    display: none;
+    transition: all 0.5s;
+
+}
+.list.show {
+    height: auto;
+    display: block;
+    transition: all 0.5s;
+
+}
+
+@media (min-width:300px) and (max-width:518px) {
+    .container {
+        width: 20%;
+        font-size: 0.6rem;
+
+    }
+}
+
+@media (min-width:519px) and (max-width:800px) {
+    .container {
+       width: 100px;
+    }
+}

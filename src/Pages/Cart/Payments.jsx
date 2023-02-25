@@ -2,12 +2,14 @@ import React,{useState} from 'react'
 
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
 
-const CartPage = () => {
+const Payments = () => {
     const [upiId, setUpiId] = useState("");
 
     const handleButtonClick = (text) => {
       setUpiId(`${upiId}${text}`);
     };
+    const carts=JSON.parse(localStorage.getItem("cart"))||[]
+    console.log(carts)
   return (
   
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
@@ -114,4 +116,4 @@ const CartPage = () => {
   )
 }
 
-export default CartPage
+export default Payments

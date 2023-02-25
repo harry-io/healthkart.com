@@ -1,8 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { MdOutlineClose } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../../Redux/Auth/actions";
 
 const AdminDetails = ({ setIsOpen, isOpen }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  let userEmail = JSON.parse(localStorage.getItem("UserEmail")) || "Admin";
+  const userImage =
+    JSON.parse(localStorage.getItem("userImage")) ||
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/510px-Default_pfp.svg.png?20220226140232";
+  const store = useSelector((store) => store.authReducer);
+  const products = useSelector((store) => store.adminReducer.adminProducts);
+  //
+  //
+  //
+  const handleLogout = () => {
+    dispatch(logoutUser);
+    navigate("/");
+  };
   return (
     <AdminPop>
       <Close onClick={() => setIsOpen(!isOpen)}>
@@ -10,16 +28,19 @@ const AdminDetails = ({ setIsOpen, isOpen }) => {
       </Close>
       <ImageContainer>
         <Image
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+          src={
+            store.isAuth
+              ? userImage
+              : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/510px-Default_pfp.svg.png?20220226140232"
+          }
           alt="img"
         />
       </ImageContainer>
-      <Name>Admin</Name>
-      <P>Total Products</P>
-      <P>Total worth</P>
+      <Name>{userEmail}</Name>
+      <P>Total Products : {products.length}</P>
       <Buttons>
-        <Button>HOME</Button>
-        <Button>LOGOUT</Button>
+        <Button onClick={() => navigate("/")}>HOME</Button>
+        <Button onClick={handleLogout}>LOGOUT</Button>
       </Buttons>
     </AdminPop>
   );
@@ -70,7 +91,7 @@ const P = styled.p`
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 `;
 const Buttons = styled.div`
   width: 90%;
