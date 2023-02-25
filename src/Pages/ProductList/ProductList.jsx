@@ -25,7 +25,7 @@ export const ProductList = () => {
 
     let paramObj = {
       params: {
-          color: searchParams.getAll('cate'),
+          brand: searchParams.getAll('brand'),
           _sort: searchParams.get('order') && 'price',
           _order: searchParams.get('order')
       }

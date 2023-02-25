@@ -1,70 +1,62 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector} from 'react-redux';
-import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { store } from '../../Redux/store';
 import styles from './SinglePage.module.css';
 
 import axios from 'axios';
-import { FaSadCry } from 'react-icons/fa';
 
 export const SinglePage = () => {
-    const {id}=useParams()
-    console.log(id)
-    const location=useLocation()
-    console.log(location)
-    const [count,setCount] = useState(1);
-    const [data,setData] = useState([]);
+  const { id } = useParams();
+  console.log(id);
+  const location = useLocation();
+  console.log(location);
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState([]);
 
-    const [weight,setWeight] = useState(true)
-    const [dis,setDis] = useState(false)
+    const {id} = useParams()
  
-    const [change,setChange] = useState("");
-    const navigate = useNavigate();
     const prod = useSelector((store) => store);
- 
+    console.log(store)
+    console.log(prod)
     var carts = JSON.parse(localStorage.getItem('cart')) || [];
 
+  var carts = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // useEffect(() => {
-    //     const prodData = prod.find((el) => el.id === +id)
-    //     console.log(prodData)
-    //     prodData && setData(prodData)
+  // useEffect(() => {
+  //     const prodData = prod.find((el) => el.id === +id)
+  //     console.log(prodData)
+  //     prodData && setData(prodData)
 
     // },[])
 useEffect(()=>{
     axios.get(`https://cute-gold-agouti-coat.cyclic.app/proteins/${id}`).then((res)=>{
         setData(res.data)
-        // console.log(res.data)
-        setChange(res.data.image[0])
+        console.log(res.data)
     })
 },[])
     const handleCart = () => {
         carts.push(data);
         localStorage.setItem('cart',JSON.stringify(carts))
-        // console.log(carts)
-        setDis(true)
+        console.log(carts)
     }
 
 
-var main = data.image
-// console.log(main);
 
   return (
     <>
-    <div className={styles.main} >
-        
+      <Navbar />
+      <div className={styles.main}>
         <div className={styles.images}>
             <div className={styles.sideImage} >
-
-                {
-                    main?.map((el) => {
-                        return  <img key={Date.now()+Math.random()} src={el} alt="" onClick={() => setChange(el)} />
-                    })
-                }
-               
+                <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
             </div>
             <div className={styles.mainImage}>
-                <img src={change} alt="" />
+                <img src={data.image[0]} alt="" />
             </div>
           
 
@@ -72,7 +64,6 @@ var main = data.image
         <div className={styles.details}>
         <h2>{data.Title}</h2>
         <h2>Rich Milk Chocolate</h2>
-        <p>BY {data.brand}</p>
         <h3>₹ {data.price}</h3>
         <p>Get it by 1 march</p>
        
@@ -80,23 +71,28 @@ var main = data.image
         <p>3 interest free payments of ₹1633 with</p>
         <div className={styles.freebie}>
             <div className={styles.freeImg}>
-               <img src="https://img9.hkrtcdn.com/21471/prd_2147078_c_t.jpg" alt="" />
+              <img
+                src="https://img9.hkrtcdn.com/21471/prd_2147078_c_t.jpg"
+                alt=""
+              />
             </div>
             <div>
-                <p>MuscleBlaze Limited Edition</p>
-                <p>Vidyut Shaker</p>
-                <h4>FREE</h4>
+              <p>MuscleBlaze Limited Edition</p>
+              <p>Vidyut Shaker</p>
+              <h4>FREE</h4>
             </div>
-
-        </div>
-        <div className={styles.buttons}>
-            <button className={styles.minus} onClick={() => setCount(count-1)}>-</button>
+          </div>
+          <div className={styles.buttons}>
+            <button
+              className={styles.minus}
+              onClick={() => setCount(count - 1)}
+            >
+              -
+            </button>
             <button className={styles.count}>{count}</button>
             <button className={styles.plus} onClick={() => setCount(count+1)}>+</button>
-            <button className={styles.addToCart} onClick={handleCart} disabled={dis == true} >Add to Cart</button>
-            <Link to={`/payments/${id}`} >
-            <button className={styles.quick} >Quick Buy</button>
-            </Link>
+            <button className={styles.addToCart} onClick={handleCart} >Add to Cart</button>
+            <button className={styles.quick}>Quick Buy</button>
         </div>
        
         </div>
@@ -149,35 +145,17 @@ var main = data.image
                     <div className={styles.convertTop}>
                         <img src="https://static1.hkrtcdn.com/hknext/static/media/pdp/weight.svg" alt="" />
                         <h3>Weight</h3>
-                        <button className={styles.kg} onClick={()=> setWeight(true)} >KG</button>
-                        <button className={styles.lb} onClick={() => setWeight(false)}>LB</button>
+                        <button className={styles.kg}>KG</button>
+                        <button className={styles.lb}>LB</button>
                     </div>
                     <div className={styles.convertBottom}>
-                    <div>
-                          {
-                            weight == true ? "5Kg" : "11LB"
-                          }
-                          <br />
-                           <p>₹{data.price}</p> 
-                        </div>
                         <div>
-                          {
-                            weight == true ? "1Kg" : "2.2LB"
-                          }
-                          <br />
-                           <p>₹999</p> 
-                        </div>
-                        <div>
-                          {
-                            weight == true ?  "2Kg" : "4.4LB"
-                          }
-                          <br />
-                           <p>₹2099</p> 
+                         
                         </div>
                     </div>
                 </div>
             </div>
     </div>
     </>
-  )
-}
+  );
+};

@@ -1,15 +1,25 @@
-import React,{useState} from 'react'
-
+import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
+import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
-const CartPage = () => {
+const Payments2 = () => {
     const [upiId, setUpiId] = useState("");
-
+    const [data,setData]=useState({})
+    const {id}=useParams()
+    const navigate=useNavigate()
     const handleButtonClick = (text) => {
       setUpiId(`${upiId}${text}`);
     };
     const carts=JSON.parse(localStorage.getItem("cart"))||[]
-    console.log(carts)
+    // console.log(carts)
+    useEffect(()=>{
+        axios.get(`https://cute-gold-agouti-coat.cyclic.app/proteins/${id}`).then((res)=>{
+            console.log(res.data)
+        setData(res.data)
+        })
+    },[])
   return (
   
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
@@ -52,7 +62,7 @@ const CartPage = () => {
                 Verify
               </Button>
               <Checkbox mt="4" defaultIsChecked >
-                Securely save for faster payments
+                Securely save for faster Payments2
               </Checkbox>
               <Box p="20px">
                 <Button
@@ -83,7 +93,11 @@ const CartPage = () => {
                   @okaxis
                 </Button>
               </Box>
-              <Button colorScheme="orange" mt="4" width="100%" cursor="pointer">
+              <Button colorScheme="orange" mt="4" width="100%" cursor="pointer" onClick={()=>{toast("Order placed successfully!!");
+            navigate("/")  
+            } }
+              
+              >
                 Securely Pay
               </Button>
             </Box>
@@ -99,13 +113,14 @@ const CartPage = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-          <Text pt="30px">Total MRP</Text>
-          <Text pt="10px">Total Discounts</Text>
-          <Text pt="10px">Shipping Charges</Text>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px"> {data.mrp} </Text></div> 
+        
+          <Text pt="10px">Total Discounts{data.mrp-data.price} </Text>
+          <Text pt="10px">Shipping Charges 99</Text>
           <hr/>
-          <Text fontWeight="bold">Payable Amount</Text>
+          <Text fontWeight="bold">Payable Amount {data.price+99} </Text>
         <Text color="green" fontSize="13px">
-        You will Save ₹1,322 & Earn ₹51 HK Cash on this order
+        You will Save ₹{data.mrp-data.price} & Earn ₹51 VIGOR Cash on this order
             </Text>   
         </Box>
       </Box>
@@ -116,4 +131,4 @@ const CartPage = () => {
   )
 }
 
-export default CartPage
+export default Payments2
