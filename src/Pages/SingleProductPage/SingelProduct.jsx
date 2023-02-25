@@ -14,11 +14,11 @@ export const SinglePage = () => {
     console.log(location)
     const [count,setCount] = useState(1);
     const [data,setData] = useState([]);
+
     const [weight,setWeight] = useState(true)
     const [dis,setDis] = useState(false)
  
     const [change,setChange] = useState("");
- 
  
     const prod = useSelector((store) => store);
  
