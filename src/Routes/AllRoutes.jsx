@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import { Search } from "../Pages/Search/Search";
 import Signup from "../Pages/Signup/Signup";
 import Footer from "../Components/Footer/Footer";
+import SingleAdminPage from "../Components/AdminPageComponents/SingleAdminPage";
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/admin/inventory" element={<Admin />} />
+      <Route path="/admin/inventory/:id" element={<SingleAdminPage />} />
       <Route path="/admin/add_product" element={<AddProduct />} />
       <Route path="/admin/edit_product" element={<EditProduct />} />
     </Routes>
