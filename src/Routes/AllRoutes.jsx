@@ -17,6 +17,7 @@ import { SinglePage } from "../Pages/SingleProductPage/SingelProduct";
 
 import Payments from "../Pages/Cart/Payments";
 import Cart from "../Pages/Cart/Cart";
+import Payments2 from "../Pages/Cart/Payments2";
 
 
 
@@ -41,6 +42,7 @@ const AllRoutes = () => {
       <Route path="/product_list/single/:id" element={<SinglePage/>} />
       <Route path="/cart_elements" element={<Cart/>} /> 
       <Route path="/payments" element={<Payments/>} /> 
+      <Route path="/payments/:id" element={<Payments2/>} /> 
 
 
     </Routes>
