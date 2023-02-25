@@ -3,7 +3,9 @@ import { useSelector} from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom';
 import { store } from '../../Redux/store';
 import styles from './SinglePage.module.css';
+
 import axios from 'axios';
+
 export const SinglePage = () => {
     const {id}=useParams()
     console.log(id)
@@ -11,6 +13,8 @@ export const SinglePage = () => {
     console.log(location)
     const [count,setCount] = useState(1);
     const [data,setData] = useState([]);
+
+    const {id} = useParams()
  
     const prod = useSelector((store) => store);
     console.log(store)
@@ -51,7 +55,7 @@ useEffect(()=>{
                 <img src="https://img4.hkrtcdn.com/14680/prd_1467923-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
             </div>
             <div className={styles.mainImage}>
-                <img src="https://img10.hkrtcdn.com/12090/prd_1208939-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_o.jpg" alt="" />
+                <img src={data.image[0]} alt="" />
             </div>
           
 
@@ -138,7 +142,7 @@ useEffect(()=>{
                     </div>
                     <div className={styles.convertBottom}>
                         <div>
-                            
+                         
                         </div>
                     </div>
                 </div>
