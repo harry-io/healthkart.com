@@ -13,8 +13,9 @@ import { ProductList } from "../Pages/ProductList/ProductList";
 // import { SinglePage } from "../Pages/SingleProductPage/SingelProduct";
 // import {SingelProduct} from "../Pages/SingleProductPage/SingelProduct"
 import { SinglePage } from "../Pages/SingleProductPage/SingelProduct";
-import CartPage from "../Pages/Cart/CartPage";
-import Payment from "../Pages/Cart/Payment";
+import Payments from "../Pages/Cart/Payments";
+import Cart from "../Pages/Cart/Cart";
+
 const AllRoutes = () => {
   return (
     <Routes>
@@ -29,7 +30,9 @@ const AllRoutes = () => {
       <Route path="/admin/edit_product" element={<EditProduct />} />
       <Route path="/product_list" element={<ProductList/>} />
       <Route path="/product_list/single/:id" element={<SinglePage/>} />
-      <Route path="/cart" element={<Payment/>} /> 
+      <Route path="/cart_elements" element={<Cart/>} /> 
+      <Route path="/payments" element={<Payments/>} /> 
+
     </Routes>
   );
 };
