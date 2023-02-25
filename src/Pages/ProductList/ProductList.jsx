@@ -3,15 +3,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { Sidebar } from '../../Components/Sidebar/Sidebar';
 import { getProduct } from '../../Redux/Products/action';
-import { ProductCard } from '../../Components/ProductCard';
+
+
 import styles from './ProductList.module.css';
+
+
+import{ ProductCard} from "../../Components/ProductCard"
+
+
+
 
 
 export const ProductList = () => {
 
 
     const dispatch = useDispatch();
-    const product = useSelector((store) => store.product);
+
+    const product = useSelector((store) => store.ProductReducer.product);
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
@@ -22,7 +30,7 @@ export const ProductList = () => {
           _order: searchParams.get('order')
       }
   }
-    
+   
 
     useEffect(() => {
         dispatch(getProduct(paramObj))
@@ -31,6 +39,7 @@ export const ProductList = () => {
 
   return (
     <>
+
     <Sidebar />
     <div className={styles.container}>
           {

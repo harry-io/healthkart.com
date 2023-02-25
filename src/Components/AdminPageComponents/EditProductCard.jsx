@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { MdImage, MdOutlineSubtitles } from "react-icons/md";
 import { IoMdPricetags } from "react-icons/io";
 
-const EditProductCard = ({ data }) => {
+const EditProductCard = ({ data, handleDelete, handlePatch }) => {
+  console.log(data);
   const [image, setImage] = useState(data.image || "");
-  const [title, setTitle] = useState(data.title || "");
+  const [title, setTitle] = useState(data.Title || "");
   const [price, setPrice] = useState(data.price || "");
   //
   //
@@ -16,13 +17,14 @@ const EditProductCard = ({ data }) => {
       price,
     };
     //
-    // api call to patch the data
+    handlePatch(id, patchObj);
     //
   };
   //
   //
-  const handleDelete = (id) => {
+  const handleDel = (id) => {
     // handleDelete function here
+    handleDelete(id);
   };
   return (
     <ProductCardMain>
@@ -60,7 +62,7 @@ const EditProductCard = ({ data }) => {
       </DivB>
       <DivC>
         <Button onClick={() => handleDone(data.id)}>DONE</Button>
-        <Delete onClick={() => handleDelete(data.id)}>DELETE</Delete>
+        <Delete onClick={() => handleDel(data.id)}>DELETE</Delete>
       </DivC>
     </ProductCardMain>
   );
