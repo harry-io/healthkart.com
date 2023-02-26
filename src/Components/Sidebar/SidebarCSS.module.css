@@ -1,13 +1,13 @@
 .container {
     width: 20%;
     height: auto;
-    border: 1px solid rgb(115, 115, 115);
+    border: 1px solid #E3E3E3;
     border-radius: 10px;
     /* margin: auto; */
     /* margin-top: 50px; */
     /* transition: all 1s cubic-bezier(0,1,0,1); */
     position:fixed;
-    top: 10%;
+    top: 25%;
     left: 5%;
     font-size: 0.8rem;
     /* align-items: center; */
@@ -18,6 +18,13 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 0%;   
+    
+}
+.container h1{
+    margin-left: 15%;
 }
 .list {
     max-height: 0;

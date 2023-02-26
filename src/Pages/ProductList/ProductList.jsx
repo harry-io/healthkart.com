@@ -9,6 +9,8 @@ import styles from './ProductList.module.css';
 
 
 import{ ProductCard} from "../../Components/ProductCard"
+import Loader from '../../Components/Loader';
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 
@@ -20,6 +22,7 @@ export const ProductList = () => {
     const dispatch = useDispatch();
 
     const product = useSelector((store) => store.ProductReducer.product);
+    const loading = useSelector((store) => store.ProductReducer.isLoading);
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
@@ -37,9 +40,14 @@ export const ProductList = () => {
     },[location.search])
 
 
+    if(loading) {
+      return <Loader />
+    }
+
+
   return (
     <>
-
+    <Navbar />
     <Sidebar />
     <div className={styles.container}>
           {

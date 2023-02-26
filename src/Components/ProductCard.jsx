@@ -3,6 +3,7 @@ import styles from "./ProductCard.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import {AiFillStar} from 'react-icons/ai'
 
 export const ProductCard = ({ id, Title, image, price, stars, reviews }) => {
   const [data, setData] = useState([]);
@@ -32,7 +33,7 @@ export const ProductCard = ({ id, Title, image, price, stars, reviews }) => {
       </div>
       <div className={styles.details}>
         <p id={styles.reviews}>
-          <button className={styles.rating}>{stars} </button> {reviews} review
+          <button className={styles.rating}>{stars} <AiFillStar  /></button> {reviews} reviews
         </p>
 
         <p>{Title}</p>
