@@ -9,6 +9,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import WhyHealthcart from "../../Components/WhyHealthcart";
 const Homepage = () => {
   return (
     <div>
@@ -134,7 +135,7 @@ const Homepage = () => {
               midBanner.map((item, index) => {
                 return (
                   <div className="topBannerImage" key={index}>
-                    <img src={item.srcLink} alt="404 image error" />
+                    <img src={item.srcLink} alt="404 error" />
                   </div>
                 );
               })}
@@ -230,7 +231,7 @@ const Homepage = () => {
               lastBanner.map((item, index) => {
                 return (
                   <div className="topBannerImage" key={index}>
-                    <img src={item.srcLink} alt="404 image error" />
+                    <img src={item.srcLink} alt="404error" />
                   </div>
                 );
               })}
@@ -343,73 +344,11 @@ const Homepage = () => {
 
       {/* -----------Why HealthCart */}
       <div className="commonDiv">
-        <div className="sliderimg ">
-          <h1
-            style={{ fontWeight: "bold", fontSize: "2rem", textAlign: "left" }}
-          >
-            Why HealthKart ?
-          </h1>
-          <div className="whyHealthkartmain">
-            <div className="whyHealthKart">
-              <img
-                style={{ width: "5rem", marginBottom: ".6rem" }}
-                src="https://img9.hkrtcdn.com/20791/normal_2079088_o.png"
-                alt=""
-              />
-              <h2
-                style={{
-                  textAlign: "left",
-                  fontWeight: "bold",
-                  marginBottom: ".6rem",
-                }}
-              >
-                Wide range of Nutritional products
-              </h2>
-              <h5 style={{ textAlign: "left", marginBottom: ".6rem" }}>
-                One-stop fitness and health destination
-              </h5>
-            </div>
-            <div className="whyHealthKart">
-              <img
-                style={{ width: "5rem", marginBottom: ".6rem" }}
-                src="https://img3.hkrtcdn.com/20791/normal_2079092_o.png"
-                alt=""
-              />
-              <h2
-                style={{
-                  textAlign: "left",
-                  fontWeight: "bold",
-                  marginBottom: ".6rem",
-                }}
-              >
-                Wide range of Nutritional products
-              </h2>
-              <h5 style={{ textAlign: "left", marginBottom: ".6rem" }}>
-                One-stop fitness and health destination
-              </h5>
-            </div>
-            <div className="whyHealthKart">
-              <img
-                style={{ width: "5rem", marginBottom: ".6rem" }}
-                src="https://img1.hkrtcdn.com/20791/normal_2079090_o.png"
-                alt=""
-              />
-              <h2
-                style={{
-                  textAlign: "left",
-                  marginBottom: ".6rem",
-                  fontWeight: "bold",
-                }}
-              >
-                Wide range of Nutritional products
-              </h2>
-              <h5 style={{ textAlign: "left", marginBottom: ".6rem" }}>
-                One-stop fitness and health destination
-              </h5>
-            </div>
-          </div>
-        </div>
+        <div className="sliderimg "></div>
       </div>
+      {/*  */}
+      <WhyHealthcart />
+      {/*  */}
       <Footer />
     </div>
   );
