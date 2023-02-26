@@ -1,18 +1,18 @@
 
 import React,{useState,useEffect} from 'react'
-import { Route } from 'react-router';
+import { Route, useNavigate } from 'react-router';
 import { Box,Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox,Container,Image,Stack} from "@chakra-ui/react";
 import Payments from './Payments';
-
+import { toast } from 'react-toastify';
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const navigate=useNavigate()
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartData(cart);
-
+ 
     let totalItemsCount = 0;
     let totalPriceCount = 0;
 
@@ -20,11 +20,20 @@ const Cart = () => {
       totalItemsCount += 1;
       totalPriceCount += Number(item.price);
     });
-
+   
     setTotalItems(totalItemsCount);
     setTotalPrice(totalPriceCount);
   }, []);
-
+  const carts = JSON.parse(localStorage.getItem("cart")) || [];
+  let sum=0
+  let mrp=0;
+  let price=0
+  for(let i=0;i<carts.length;i++){
+   sum+=carts[i].price
+  mrp+=carts[i].mrp
+  price+=carts[i].price
+  }
+  const discount=mrp-price
   const handleRemoveItem = (index) => {
     const updatedCart = [...cartData];
     updatedCart.splice(index, 1);
@@ -56,15 +65,15 @@ const Cart = () => {
           <Flex key={index} alignItems="center" mb="3">
             <Box flex="1">
               <Text fontWeight="bold">Title:</Text>
-              <Text>{item.Title}</Text>
+              <Text fontSize="12px">{item.Title}</Text>
             </Box>
 
-            <Box flex="1" ml="20px">
-              <Text fontWeight="bold">Brand:</Text>
+            <Box flex="1" ml="50px" mt="-20px">
+              <Text fontWeight="bold" >Brand:</Text>
               <Text>{item.brand}</Text>
             </Box>
 
-            <Box flex="1">
+            <Box flex="1" mt="-20px">
               <Text fontWeight="bold">Price:</Text>
               <Text>{item.price}</Text>
             </Box>
@@ -97,17 +106,23 @@ const Cart = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-          <Text pt="30px">Total MRP : {totalPrice}Rs </Text>
-          <Text pt="10px">Total Discounts: 1000Rs</Text>
-          <Text pt="10px">Shipping Charges:100Rs</Text>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="30px">Total MRP :  </Text> <Text pt="30px">{totalPrice}</Text></div> 
+         
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}</Text></div> 
+
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>     <Text pt="10px">Shipping Charges</Text> <Text pt="10px">99</Text></div> 
+         
+       
           <hr/>
-          <Text fontWeight="bold">Payable Amount {totalPrice+100-1000}</Text>
+          <Text fontWeight="bold">Payable Amount {sum-discount+99}</Text>
         <Text color="green" fontSize="13px">
-        You will Save ₹1,322 & Earn ₹51 HK Cash on this order
+        You will Save {discount} & Earn ₹51 Vigor Cash on this order
             </Text>   
         </Box>
-            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px">
-              Proceed to Pay
+            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px" onClick={()=>{toast("Order placed successfully!!");
+            navigate("/payments")  
+            } }>
+              Proceed to Pay {sum-discount+99}Rs
         
              </Button>
       </Box>
