@@ -58,6 +58,9 @@
   height: 3rem;
   border-radius: 10px;
 }
+.mrp {
+  text-decoration: dashed;
+}
 
 .freebie {
   width: 60%;
