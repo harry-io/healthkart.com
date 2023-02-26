@@ -1,26 +1,31 @@
 import React from "react";
 import "./Home.css";
-import { MainBanner, midBanner,lastBanner } from "../../Components/SliderImages/SliderImages";
+import {
+  MainBanner,
+  midBanner,
+  lastBanner,
+} from "../../Components/SliderImages/SliderImages";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 const Homepage = () => {
-  return <div>
-    <Navbar/>
-    {/* //top slider */}
-    
+  return (
+    <div>
+      <Navbar />
+      {/* //top slider */}
+
       <div class="info-section1">
         <span>App Sale Is Now Live</span>
       </div>
-      
-    <div className="topBanner">
-        <Carousel infinitLoop autoPlay>
+
+      <div className="topBanner">
+        <Carousel infinitLoop={true} autoPlay>
           {MainBanner.length > 0 &&
             MainBanner.map((item, index) => {
               return (
                 <div className="topBannerImage" key={index}>
-                  <img src={item.srcLink} alt="404 image error" />
+                  <img src={item.srcLink} alt="404 error" />
                 </div>
               );
             })}
@@ -28,7 +33,7 @@ const Homepage = () => {
       </div>
 
       {/* //mid slider */}
-    <div className="commonDiv sliderimgLinerbg">
+      <div className="commonDiv sliderimgLinerbg">
         <div className="sliderimg">
           <div id="I_Like_You_slider">
             <div className="product_container">
@@ -121,8 +126,8 @@ const Homepage = () => {
         </div>
       </div>
 
-     {/* ----------------midBanner */}
-     <div className="commonDiv midBanner">
+      {/* ----------------midBanner */}
+      <div className="commonDiv midBanner">
         <div className="sliderimg">
           <Carousel infinitLoop autoPlay>
             {midBanner.length > 0 &&
@@ -405,11 +410,9 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
-
-  </div>
-
- 
+      <Footer />
+    </div>
+  );
 };
 
 export default Homepage;
