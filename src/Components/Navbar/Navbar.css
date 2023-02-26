@@ -1,481 +1,563 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    width: 80%;
-    margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1248px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding-left: 1rem;
+  border-radius: 10px;
+}
+main {
+  position: relative;
+}
+.user_dropdown {
+  position: absolute;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  background-color: #fff;
+  right: -85px;
+  z-index: 15;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.user_dropdown > a {
+  width: 100%;
+  text-decoration: none;
+  color: #00b5b7;
+  padding: 5px 0;
+  padding-left: 1rem;
+}
+.user_dropdown > a:hover {
+  background-color: #00b4b70b;
+}
+.user_dropdown > button {
+  border: none;
+  background-color: #00b5b7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  margin-top: 1rem;
+}
 
-  }
-  form{
-    display: flex;
-    
-  }
-  main>button {
-    width: 120px;
-    padding: 11px;
-    background-color: #00b5b7;
-    border: none;
-    color: white;
-    border-radius: 7px;
-    cursor: pointer;
-  }
-  .logout{
-    cursor: pointer;
-    padding: 13px;
-    background-color: red;
-    border: none;
-    color: white;
-    border-radius: 10px;
-  }
-  .input input {
-    width: 600px;
-    padding: 10px;
-    border:solid rgb(240, 245, 245);
-    border-radius: 10px;
-    margin-left: 40px;
-    margin-right: 30px;
-    background-color: #f7f7f7;
-    color: #77777e;
-  }
-  .logo > img {
-    width: 150px;
-
-  }
-  /* .cartlogo > svg {
+main > button {
+  width: 120px;
+  padding: 11px;
+  background-color: #00b5b7;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.logout {
+  cursor: pointer;
+  padding: 13px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+.input {
+  width: 50%;
+  padding: 0;
+}
+.input input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #77777e;
+  outline: none;
+  padding-left: 1rem;
+  font-size: 16px;
+  caret-color: #00b5b7;
+}
+.logo {
+  width: 10%;
+}
+.logo > img {
+  width: 100%;
+}
+.user_btn {
+  color: #00b5b7;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.loginbtn {
+  width: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartlogo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cart-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .cartlogo > svg {
     width: 50px;
     margin-left: 40px;
 
   } */
 
+hr {
+  margin-top: 10px;
+  border: 1px solid rgb(222, 220, 220);
+}
+.navbar2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 84%;
+  margin: auto;
+  margin-top: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.navbar2 p {
+  font-size: 16px;
+  color: rgb(72, 72, 72);
+}
+.dropdown1 > p:nth-child(1) {
+  border: 1px solid rgb(211, 208, 208);
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-  hr {
-    margin-top: 10px;
-    border: 1px solid rgb(222, 220, 220);
+.category-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* DropDown menu */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+.drop-1 {
+  border: 1px solid #dbdee9;
+  padding: 7px;
+  border-radius: 7px;
+}
+.category-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  text-decoration: none;
+  /* border: 1px solid teal; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 1200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  padding: 15px;
+}
+.dropdown-content1 {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  width: 100%;
+}
+.dropdown-content1 > div {
+  margin-top: 10px;
+}
+.dropdown-content1 > div p {
+  text-align: left;
+  margin-top: 10px;
+}
+.dropdown-content1 > div:nth-child(1) {
+  background-color: aliceblue;
+  padding: 20px;
+  height: auto;
+}
+.dropdown-content p:hover {
+  color: teal;
+}
+.dropdown1:hover .dropdown-content {
+  display: block;
+}
+
+/* Drop Down 2 */
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: aliceblue;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content2 > div {
+  display: flex;
+  gap: 30px;
+  text-align: left;
+}
+.dropdown-content2 div > p {
+  text-align: left;
+}
+.dropdown-content2 > div {
+  display: flex;
+}
+.dropdown-content23 {
+  width: 50%;
+  display: grid;
+  background-color: aliceblue;
+  padding: 10px;
+}
+.dropdown-content234 {
+  width: 50%;
+  background-color: #fff;
+  width: 100%;
+  padding-left: 1rem;
+}
+.dropdown-content234 > p {
+  margin-top: 10px;
+}
+.dropdown-content2 p:hover {
+  color: teal;
+}
+.dropdown-content23 p:hover {
+  color: teal;
+}
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+/* Dropdown css */
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 20px;
+}
+
+.dropdown-content3 > div > img {
+  width: 100%;
+}
+.dropdown-content3 > div {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dropdown-content3 img:hover {
+  background-color: #b17171;
+}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+
+/*  Next Drop Down Third*/
+.Deals {
+  display: flex;
+  gap: 10px;
+}
+.Deals > div > img {
+  width: 100%;
+  height: 50px;
+}
+.dropdown4 {
+  position: relative;
+  display: inline-block;
+}
+.dropdown4 > div {
+  padding: 20px;
+}
+
+.dropdown-content4 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content4 > div > h3 {
+  text-align: left;
+}
+.dropdown-content4 > div {
+  margin-top: 10px;
+}
+.dropdown-content4 p:hover {
+  color: teal;
+}
+
+.dropdown4:hover .dropdown-content4 {
+  display: block;
+}
+
+/*  Next Drop Down last*/
+
+.dropdown7 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content7 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content7 > div {
+  padding: 10px;
+  margin-top: 10px;
+}
+.dropdown-content3 {
+  min-width: 300px;
+}
+.support1 > p {
+  text-align: left;
+  /* margin-top: 10px; */
+  padding: 10px;
+}
+.support2 > p {
+  background-color: rgb(238, 235, 235);
+  padding: 5px;
+}
+.support2 > p:nth-child(2) {
+  font-size: 22px;
+}
+.dropdown-content7 p:hover {
+  color: teal;
+}
+
+.dropdown7:hover .dropdown-content7 {
+  display: block;
+}
+
+/* Login CSS */
+.Loginform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin: auto;
+  width: 100%;
+}
+.Caraousel > div {
+  display: grid;
+  width: 100%;
+  padding: 10px;
+}
+.Caraousel > div > h4 {
+  margin: 20px;
+}
+.Caraousel > div > img {
+  width: 100%;
+}
+.Loginform > div {
+  display: grid;
+}
+.Signup > p {
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+.Signup button {
+  width: 200px;
+  margin-top: 25px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.Signup button:hover {
+  background-color: green;
+  color: white;
+}
+.forminput > p {
+  margin-top: 15px;
+  text-align: left;
+}
+.forminput > input {
+  width: 300px;
+  margin-top: 5px;
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1080px) {
+  .navbar {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .loginbtn > button {
+    width: 100px;
+    padding: 13px;
+    color: white;
+    border-radius: 5px;
+  }
+  .input input {
+    width: 300px;
+    padding: 12px;
+  }
+  .logo > img {
+    width: 120px;
+  }
+  .cartlogo > img {
+    width: 100%;
   }
   .navbar2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 84%;
     margin: auto;
     margin-top: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
   }
   .navbar2 p {
-    font-size: 16px;
     color: rgb(72, 72, 72);
+    text-align: center;
+    font-size: 13px;
   }
   .dropdown1 > p:nth-child(1) {
-    border: 1px solid rgb(211, 208, 208);
-    width: 200px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
+    width: 150px;
   }
-
-  /* DropDown menu */
+  .dropdown-content3 {
+    min-width: 200px;
+  }
+  /* Dropdown 1  */
+  .Dropdownunder {
+    display: none;
+  }
+  .categoryButton {
+    display: flex;
+  }
   .dropdown1 {
     position: relative;
     display: inline-block;
   }
-  .drop-1{
-    border: 1px solid #dbdee9;
-    padding: 7px;
-    border-radius: 7px;
-  }
-  .category-button{
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    text-decoration: none;
-    /* border: 1px solid teal; */
-  }
-
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 1200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 4;
-    padding: 15px;
-  }
-  .dropdown-content1 {
-    display: flex;
-    justify-content: space-around;
-    gap: 50px;
-    width: 100%;
-  }
-  .dropdown-content1 > div {
-    margin-top: 10px;
-  }
-  .dropdown-content1 > div p {
-    text-align: left;
-    margin-top: 10px;
-  }
-  .dropdown-content1 > div:nth-child(1) {
-    background-color: rgb(229, 246, 203);
-    padding: 20px;
-    height: auto;
-  }
-  .dropdown-content p:hover {
-    color: teal;
-  }
-  .dropdown1:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Drop Down 2 */
-  .dropdown2 {
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown-content2 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 400px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown-content2>div{
-    display: flex;
-    gap:30px;
-    text-align: left;
-  }
-  .dropdown-content2 div>p{
-    text-align: left;
-  }
-  .dropdown-content23{
-    display: grid;
-    background-color: rgb(212, 237, 176);
-    padding: 10px;
-  }
-  .dropdown-content234>p{
-    margin-top: 10px;
-  }
-  .dropdown-content2 p:hover {
-    color: teal;
-  }
-  .dropdown-content23 p:hover {
-    color: teal;
-
-  }
-  .dropdown2:hover .dropdown-content2 {
-    display: block;
-  }
-
-  /* Dropdown css */
-  .dropdown3 {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content3 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 500px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    padding: 20px;
-  }
-
-  .dropdown-content3>div>img {
-    width: 100%;
-  }
-  .dropdown-content3>div{
-    display: grid;
     gap: 20px;
-    grid-template-columns: repeat(2,1fr);
+    min-width: 600px;
   }
-
-  .dropdown-content3 img:hover {background-color: #b17171}
-
-  .dropdown3:hover .dropdown-content3 {
-    display: block;
-  }
-
-
-
-
-  /*  Next Drop Down Third*/
-  .Deals {
-    display: flex;
-    gap: 10px;
-  }
-  .Deals > div > img {
-    width: 100%;
-    height: 50px;
-  }
-  .dropdown4 {
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown4 > div {
-    padding: 20px;
-  }
-
-  .dropdown-content4 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 500px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  .dropdown-content4 > div > h3 {
-    text-align: left;
-  }
-  .dropdown-content4 > div {
-    margin-top: 10px;
-  }
-  .dropdown-content4 p:hover {
-    color: teal;
-  }
-
-  .dropdown4:hover .dropdown-content4 {
-    display: block;
-  }
-
-  /*  Next Drop Down last*/
-
-  .dropdown7 {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content7 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  .dropdown-content7 > div {
-    padding: 10px;
-    margin-top: 10px;
-  }
-  .dropdown-content3 {
-    min-width: 300px;
-  }
-  .support1 > p {
-    text-align: left;
-    /* margin-top: 10px; */
-    padding: 10px;
-  }
-  .support2 > p {
-    background-color: rgb(238, 235, 235);
-    padding: 5px;
-  }
-  .support2 > p:nth-child(2) {
-    font-size: 22px;
-  }
-  .dropdown-content7 p:hover {
-    color: teal;
-  }
-
-  .dropdown7:hover .dropdown-content7 {
-    display: block;
-  }
-
-  /* Login CSS */
-  .Loginform{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin: auto;
-    width: 100%;
-  }
-  .Caraousel>div{
-    display: grid;
-    width: 100%;
-    padding: 10px;
-
-  }
-  .Caraousel>div>h4{
-    margin: 20px;
-  }
-  .Caraousel>div>img{
-    width: 100%;
-
-  }
-  .Loginform>div{
-    display: grid;
-
-  }
-  .Signup>p{
-    margin-bottom: 50px;
-    font-size: 25px;
-  }
-  .Signup button{
-    width: 200px;
-    margin-top: 25px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  .Signup button:hover{
-    background-color: green;
-    color: white;
-  }
-  .forminput>p{
-    margin-top: 15px;
-    text-align: left;
-  }
-  .forminput>input{
-    width: 300px;
-    margin-top: 5px;
-    border:1px solid red;
-    padding:10px;
-    border-radius: 20px;
-  }
-
-  @media screen and (max-width: 1080px) {
-    .navbar {
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .loginbtn > button {
-      width: 100px;
-      padding: 13px;
-      color: white;
-      border-radius: 5px;
-    }
-    .input input {
-      width: 300px;
-      padding: 12px;
-    }
-    .logo > img {
-      width: 120px;
-    }
-    .cartlogo > img {
-      width: 50px;
-    }
-    .navbar2 {
-      margin: auto;
-      margin-top: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .navbar2 p {
-      color: rgb(72, 72, 72);
-      text-align: center;
-      font-size: 13px;
-    }
-    .dropdown1 > p:nth-child(1) {
-      width: 150px;
-    }
-    .dropdown-content3 {
-      min-width: 200px;
-    }
-    /* Dropdown 1  */
-    .Dropdownunder {
-      display: none;
-    }
-    .categoryButton{
-      display: flex;
-    }
-    .dropdown1 {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      gap: 20px;
-      min-width: 600px;
-    }
   /* Dropdown 2 */
   .dropdown-content2 {
     min-width: 300px;
-
   }
 
+  /* Drop Down 4 */
 
-    /* Drop Down 4 */
-
-    .dropdown-content4 {
-      min-width: 200px;
-    }
-
-    /* Next DropDown */
-
-    .dropdown-content7 {
-      min-width: 200px;
-    }
-    .support1 > p {
-      text-align: left;
-      margin-top: 10px;
-      padding: 0;
-    }
-    .support2 > p:nth-child(2) {
-      font-size: 15px;
-    }
-
-    /* Login  */
-    .forminput>input{
-      width: 180px;
-    }
-    .Signup button{
-      width: 100px;
-    }
-
+  .dropdown-content4 {
+    min-width: 200px;
   }
 
-  @media only screen and (max-width: 760px) {
-    .loginbtn > button {
-      width: 80px;
-      padding: 13px;
-      color: white;
-      border-radius: 5px;
-    }
-    .input input {
-      width: 80px;
-      padding: 12px;
-    }
-    .logo > img {
-      width: 120px;
-    }
-    .cartlogo > img {
-      width: 50px;
-    }
-    .navbar2 p {
-      color: rgb(72, 72, 72);
-      text-align: center;
-      font-size: 10px;
-    }
-    /* dropdown */
-    .dropdown-content {
-      gap: 20px;
-      min-width: 400px;
-    }
+  /* Next DropDown */
 
-    /* Next DropDown */
-
-    .dropdown-content7 {
-      min-width: 150px;
-    }
-    .support1 > p {
-      text-align: left;
-      margin-top: 10px;
-    }
-    .Caraousel>div>h4{
-      font-size: 12px;
-    }
-    .Caraousel>div>p{
-      font-size: 10px;
-    }
+  .dropdown-content7 {
+    min-width: 200px;
   }
+  .support1 > p {
+    text-align: left;
+    margin-top: 10px;
+    padding: 0;
+  }
+  .support2 > p:nth-child(2) {
+    font-size: 15px;
+  }
+
+  /* Login  */
+  .forminput > input {
+    width: 180px;
+  }
+  .Signup button {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .loginbtn > button {
+    width: 80px;
+    padding: 13px;
+    color: white;
+    border-radius: 5px;
+  }
+  .input input {
+    width: 80px;
+    padding: 12px;
+  }
+  .logo > img {
+    width: 120px;
+  }
+  .cartlogo > img {
+    width: 50px;
+  }
+  .navbar2 p {
+    color: rgb(72, 72, 72);
+    text-align: center;
+    font-size: 10px;
+  }
+  /* dropdown */
+  .dropdown-content {
+    gap: 20px;
+    min-width: 400px;
+  }
+
+  /* Next DropDown */
+
+  .dropdown-content7 {
+    min-width: 150px;
+  }
+  .support1 > p {
+    text-align: left;
+    margin-top: 10px;
+  }
+  .Caraousel > div > h4 {
+    font-size: 12px;
+  }
+  .Caraousel > div > p {
+    font-size: 10px;
+  }
+}

@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import LoginPopup from "./LoginPopup";
 import image from "../../Asset/logo.png";
 import { IconButton } from "@chakra-ui/react";
+import { FiSearch } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
 
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../Redux/Auth/actions";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  let userName;
+  const [hide, sethide] = useState(false);
+  const { isAuth } = useSelector((store) => store.authReducer);
+  console.log(isAuth);
+  useEffect(() => {
+    sethide(false);
+  }, []);
+  let name = JSON.parse(localStorage.getItem("UserEmail")) || "User";
+  userName = name;
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -20,6 +35,7 @@ const Navbar = () => {
         </div>
         <div className="input">
           <form>
+            <FiSearch style={{ fontSize: "1.5rem", color: "#77777e" }} />
             <input
               placeholder="Search for products & brands"
               //  onClick={() => navigate('/Search')}
@@ -30,7 +46,27 @@ const Navbar = () => {
         <div className="loginbtn">
           <div className="LoginPopup">
             <main>
-              <button>Login</button>
+              {isAuth ? (
+                <div className="user_btn">
+                  <FaUserCircle onClick={() => sethide(!hide)} />
+                </div>
+              ) : (
+                <button onClick={() => navigate("/login")}>Login</button>
+              )}
+              {hide && (
+                <div className="user_dropdown">
+                  <Link>{userName}</Link>
+                  <Link to="/admin/inventory">Admin Panel</Link>
+                  <button
+                    onClick={() => {
+                      dispatch(logoutUser());
+                      toast("Looged out successfully !");
+                    }}
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
             </main>
           </div>
         </div>
