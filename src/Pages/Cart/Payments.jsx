@@ -104,7 +104,7 @@ const Payments = () => {
               <Button colorScheme="orange" mt="4" width="100%" cursor="pointer" onClick={()=>{toast("Order placed successfully!!");
             navigate("/")  
             } }>
-                Securely Pay {sum-discount+99}
+                Securely Pay {carts.length===0?0:sum-discount+99}₹
               </Button>
             </Box>
           </TabPanel>
@@ -119,12 +119,12 @@ const Payments = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px">{sum}</Text></div> 
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}</Text></div> 
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>    <Text pt="10px">Shipping Charges</Text> <Text pt="10px">100</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px">{sum}₹</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}₹</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>    <Text pt="10px">Shipping Charges</Text> <Text pt="10px">{carts.length===0?0:99}₹</Text></div> 
        
           <hr/>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px" fontWeight="bold">{sum-discount+99}</Text></div> 
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px" fontWeight="bold">{carts.length===0?0:sum-discount+99}₹ </Text></div> 
           
         <Text color="green" fontSize="13px">
         You will Save ₹{discount} & Earn ₹51 Vigor Cash on this order

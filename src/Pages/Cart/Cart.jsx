@@ -110,23 +110,23 @@ const Cart = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="30px">Total MRP :  </Text> <Text pt="30px">{totalPrice}</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="30px">Total MRP :  </Text> <Text pt="30px">{totalPrice}₹</Text></div> 
          
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}₹</Text></div> 
 
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>     <Text pt="10px">Shipping Charges</Text> <Text pt="10px">99</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>     <Text pt="10px">Shipping Charges</Text> <Text pt="10px">{carts.length===0?0:99}₹</Text></div> 
          
-       
+      {console.log(carts.length)}
           <hr/>
-          <Text fontWeight="bold">Payable Amount {sum-discount+99}</Text>
+       
+          <Text fontWeight="bold">Payable Amount {carts.length===0?0:sum-discount+99}₹ </Text>
         <Text color="green" fontSize="13px">
         You will Save {discount} & Earn ₹51 Vigor Cash on this order
             </Text>   
         </Box>
-            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px" onClick={()=>{
-            navigate("/payments")  
-            } }>
-              Proceed to Pay {sum-discount+99}Rs
+            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px" onClick={()=>{toast("Redirecting to payments page!!");
+            navigate("/payments")     } }>
+              Proceed to Pay {carts.length===0?0:sum-discount+99}₹
         
              </Button>
       </Box>

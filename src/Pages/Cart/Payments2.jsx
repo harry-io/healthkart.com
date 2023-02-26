@@ -119,12 +119,12 @@ const Payments2 = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px"> {data.mrp} </Text></div> 
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text>  <Text pt="10px"> {data.mrp-data.price} </Text></div> 
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Shipping Charges </Text>  <Text pt="10px"> 99</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px"> {data.mrp}₹ </Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text>  <Text pt="10px"> {data.mrp-data.price}₹ </Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Shipping Charges </Text>  <Text pt="10px"> 99₹</Text></div> 
          
           <hr/>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px">  {data.price+99}  </Text></div> 
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px">  {data.price+99}₹  </Text></div> 
        
         <Text color="green" fontSize="13px">
         You will Save ₹{data.mrp-data.price} & Earn ₹51 VIGOR Cash on this order
