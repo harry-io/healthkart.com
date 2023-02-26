@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
 import { useNavigate, useParams } from 'react-router';
 import { toast } from 'react-toastify';
+import Navbar from '../../Components/Navbar/Navbar';
 
 const Payments2 = () => {
     const [upiId, setUpiId] = useState("");
@@ -21,7 +22,8 @@ const Payments2 = () => {
         })
     },[])
   return (
-  
+  <>
+ <Navbar/>
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
      <Flex>
       <Box w="62%">
@@ -132,7 +134,7 @@ const Payments2 = () => {
     </Flex>
 </div>
 
-   
+</>
   )
 }
 
