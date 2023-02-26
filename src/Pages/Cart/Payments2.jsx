@@ -25,8 +25,12 @@ const Payments2 = () => {
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
      <Flex>
       <Box w="62%">
-        <Box bg="rgb(255, 255, 255)" h="100px" borderRadius="lg" p="4" color="black" fontWeight="bold" textAlign="left" mb="4" ml="100px">
+        <Box bg="rgb(255, 255, 255)" h="200px" borderRadius="lg" p="4" color="black" fontWeight="bold" textAlign="left" mb="4" ml="100px">
           Deliver Address
+          <Input type="text" placeholder='Enter Address' value="House No 9,Aruna Nagar,Chandni Chowk,Delhi" / > <br/> <br/>
+        <Input type="number" placeholder='Enter Pincode' width="30%" /> <Input type="text" placeholder='Enter Landmark' width="50%"/>
+        <br ></br>
+        <Button marginLeft="200px" mt="10px"> Edit Address </Button>  
         </Box>
         <Box bg="rgb(255, 255, 255)"borderRadius="lg" p="4"  textAlign="left" ml="100px" height="65vh">
             <strong> Payment Method</strong>
@@ -98,7 +102,7 @@ const Payments2 = () => {
             } }
               
               >
-                Securely Pay
+                Securely Pay {data.price+99} 
               </Button>
             </Box>
           </TabPanel>
@@ -114,11 +118,12 @@ const Payments2 = () => {
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px"> {data.mrp} </Text></div> 
-        
-          <Text pt="10px">Total Discounts{data.mrp-data.price} </Text>
-          <Text pt="10px">Shipping Charges 99</Text>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text>  <Text pt="10px"> {data.mrp-data.price} </Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Shipping Charges </Text>  <Text pt="10px"> 99</Text></div> 
+         
           <hr/>
-          <Text fontWeight="bold">Payable Amount {data.price+99} </Text>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px">  {data.price+99}  </Text></div> 
+       
         <Text color="green" fontSize="13px">
         You will Save ₹{data.mrp-data.price} & Earn ₹51 VIGOR Cash on this order
             </Text>   

@@ -1,22 +1,37 @@
 import React,{useState} from 'react'
 
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
-
+import { useNavigate } from 'react-router-dom';
+import {toast} from "react-toastify"
 const Payments = () => {
     const [upiId, setUpiId] = useState("");
-
+    const navigate=useNavigate()
     const handleButtonClick = (text) => {
       setUpiId(`${upiId}${text}`);
     };
     const carts=JSON.parse(localStorage.getItem("cart"))||[]
     console.log(carts)
+    let sum=0
+    let mrp=0;
+    let price=0
+    for(let i=0;i<carts.length;i++){
+     sum+=carts[i].price
+    mrp+=carts[i].mrp
+    price+=carts[i].price
+    }
+    const discount=mrp-price
   return (
   
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
      <Flex>
       <Box w="62%">
-        <Box bg="rgb(255, 255, 255)" h="100px" borderRadius="lg" p="4" color="black" fontWeight="bold" textAlign="left" mb="4" ml="100px">
+        <Box bg="rgb(255, 255, 255)" h="200px" borderRadius="lg" p="4" color="black" fontWeight="bold" textAlign="left" mb="4" ml="100px">
           Deliver Address
+      <Input type="text" placeholder='Enter Address' value="House No 9,Aruna Nagar,Chandni Chowk,Delhi" / > <br/> <br/>
+        <Input type="number" placeholder='Enter Pincode' width="30%" /> <Input type="text" placeholder='Enter Landmark' width="50%"/>
+        <br ></br>
+        <Button marginLeft="200px" mt="10px"> Edit Address </Button>  
+      
         </Box>
         <Box bg="rgb(255, 255, 255)"borderRadius="lg" p="4"  textAlign="left" ml="100px" height="65vh">
             <strong> Payment Method</strong>
@@ -83,8 +98,10 @@ const Payments = () => {
                   @okaxis
                 </Button>
               </Box>
-              <Button colorScheme="orange" mt="4" width="100%" cursor="pointer">
-                Securely Pay
+              <Button colorScheme="orange" mt="4" width="100%" cursor="pointer" onClick={()=>{toast("Order placed successfully!!");
+            navigate("/")  
+            } }>
+                Securely Pay {sum-discount+99}
               </Button>
             </Box>
           </TabPanel>
@@ -99,13 +116,15 @@ const Payments = () => {
       <Box w="30%">
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
-          <Text pt="30px">Total MRP</Text>
-          <Text pt="10px">Total Discounts</Text>
-          <Text pt="10px">Shipping Charges</Text>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="30px">Total MRP </Text>  <Text pt="30px">{sum}</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}> <Text pt="10px">Total Discounts</Text> <Text pt="10px" color="green">{discount}</Text></div> 
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>    <Text pt="10px">Shipping Charges</Text> <Text pt="10px">100</Text></div> 
+       
           <hr/>
-          <Text fontWeight="bold">Payable Amount</Text>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}><Text fontWeight="bold">Payable Amount</Text> <Text pt="10px" fontWeight="bold">{sum-discount+99}</Text></div> 
+          
         <Text color="green" fontSize="13px">
-        You will Save ₹1,322 & Earn ₹51 HK Cash on this order
+        You will Save ₹{discount} & Earn ₹51 Vigor Cash on this order
             </Text>   
         </Box>
       </Box>
