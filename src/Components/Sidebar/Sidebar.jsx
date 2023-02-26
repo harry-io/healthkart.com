@@ -46,11 +46,11 @@ export const Sidebar = () => {
         <div>  
             <h1>Brands</h1>
         <input type="checkbox" value="MuscleBlaze" onChange={handleFilter} checked={brand.includes("MuscleBlaze")} />
-        <label>MB</label>
+        <label>MuscleBlaze</label>
         </div>
         <div>  
         <input type="checkbox" value="ON" onChange={handleFilter} checked={brand.includes("ON")} />
-        <label>OB</label>
+        <label>ON</label>
         </div>
         <div>  
         <input type="checkbox" value="GNC" onChange={handleFilter} checked={brand.includes("GNC")} />

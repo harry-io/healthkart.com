@@ -1,12 +1,12 @@
 .main {
   width: 80%;
   height: 100vh;
-  border: 1px solid red;
   margin: auto;
   display: flex;
   gap: 2%;
   overflow: hidden;
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 .images {
   width: 50%;
@@ -19,10 +19,12 @@
 }
 .mainImage {
   width: 60%;
-  /* height: 90%; */
+  height: 50%;
   margin-left: 50px;
-  /* border: 1px solid red; */
   background-color: #f7f7f7;
+  text-align: center;
+  align-content: center;
+  margin-top: 100px;
 }
 .sideImage {
   width: 20%;
@@ -47,6 +49,7 @@
   /* border: 1px solid black; */
   text-align: left;
   line-height: 2rem;
+  /* display: none; */
 }
 
 .premium {
@@ -57,9 +60,13 @@
   border: none;
   height: 3rem;
   border-radius: 10px;
+  text-align: center;
+}
+.premium img {
+  text-align: left;
 }
 .mrp {
-  text-decoration: dashed;
+  text-decoration:line-through;
 }
 
 .freebie {
@@ -124,14 +131,16 @@
 .addToCart {
   width: 40%;
   height: 45px;
-  background-color: white;
+  background-color: #FFF9F4;
   color: #ff8914;
   font-size: 1.1rem;
   font-weight: 600;
   border: 1px solid #ff8914;
   border-radius: 10px;
   cursor: pointer;
+  
 }
+
 
 .quick {
   width: 30%;
@@ -149,10 +158,13 @@
   width: 80%;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
   margin: auto;
   margin-top: 50px;
-  height: 500px;
+  padding: 20px;
+  height: auto;
 }
 
 .prodBene {
@@ -168,7 +180,7 @@
   text-align: left;
   padding: 20px;
   padding-top: 20px;
-  line-height: 15px;
+  line-height: 20px;
   border-left: 1px solid #dfe2ec;
   border-right: 1px solid #dfe2ec;
   border-top-right-radius: 10px;
@@ -182,7 +194,7 @@
 }
 
 .nutrients {
-  line-height: 10px;
+  line-height: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -196,12 +208,12 @@
 
 .nutrients p {
   font-size: 12px;
+  color: #924952;
 }
 
 .kilo {
   width: 40%;
   height: 100%;
-  border: 1px solid yellow;
   margin-left: 30px;
 }
 
@@ -248,6 +260,50 @@
   height: 50px;
   width: 70px;
 }
+.special {
+  margin-top: 50px;
+}
+
+.offers {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #E6E8EF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  margin-top: 30px;
+  font-size: 15px;  
+}
+.offers img {
+  width: 30%;
+  height: 50%;
+}
+.delivery {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: #FBFBFB;
+  padding: 10px;
+  line-height: 3rem;
+}
+.delivery div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delivery input {
+  width: 80%;
+  border: 1px solid #d4d4d4;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #F7F7F7;
+}
+
+
 
 @media (min-width: 300px) and (max-width: 518px) {
   .main {
@@ -264,7 +320,9 @@
   }
   .mainImage {
     width: 80%;
-    height: 80%;
+    height: 70%;
+    margin: 0%;
+    margin-left: 10%;
   }
   .sideImage {
     width: 100%;
@@ -319,14 +377,20 @@
   .nutrients {
     height: auto;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    line-height: 15px;
+    border: 1px solid red;
+  }
+  .kilo {
+    width: 50%;
   }
 }
 
 @media (min-width: 519px) and (max-width: 800px) {
   .mainImage {
-    height: 70%;
+    height: 50%;
+    width: 60%;
   }
   .sideImage {
     height: 70%;
