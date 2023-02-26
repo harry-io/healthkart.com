@@ -4,6 +4,7 @@ import { Route, useNavigate } from 'react-router';
 import { Box,Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox,Container,Image,Stack} from "@chakra-ui/react";
 import Payments from './Payments';
 import { toast } from 'react-toastify';
+import Navbar from '../../Components/Navbar/Navbar';
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
@@ -49,9 +50,12 @@ const Cart = () => {
     setTotalItems(0);
     setTotalPrice(0);
   }
+
   return (
-  
-    <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
+  <>
+  <Navbar/>
+    <div style={{backgroundColor:"#f2f4f5",height:"100vh"
+  } }>
      <Flex>
       <Box w="70%">
         
@@ -119,7 +123,7 @@ const Cart = () => {
         You will Save {discount} & Earn ₹51 Vigor Cash on this order
             </Text>   
         </Box>
-            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px" onClick={()=>{toast("Order placed successfully!!");
+            <Button backgroundColor="#00B5B7" color="white" width="95%" ml="20px" onClick={()=>{
             navigate("/payments")  
             } }>
               Proceed to Pay {sum-discount+99}Rs
@@ -128,6 +132,7 @@ const Cart = () => {
       </Box>
     </Flex>
 </div>
+  </>
 
    
   )

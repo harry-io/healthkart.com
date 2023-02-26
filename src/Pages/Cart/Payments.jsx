@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text,Flex ,Button,Input,Checkbox} from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 import {toast} from "react-toastify"
+import Navbar from '../../Components/Navbar/Navbar';
 const Payments = () => {
     const [upiId, setUpiId] = useState("");
     const navigate=useNavigate()
@@ -20,8 +21,10 @@ const Payments = () => {
     price+=carts[i].price
     }
     const discount=mrp-price
+    
   return (
-  
+  <>
+  <Navbar/>
     <div style={{backgroundColor:"#f2f4f5",height:"100vh"} }>
      <Flex>
       <Box w="62%">
@@ -131,6 +134,7 @@ const Payments = () => {
     </Flex>
 </div>
 
+                  </>
    
   )
 }
