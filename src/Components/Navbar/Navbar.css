@@ -14,7 +14,7 @@
   margin-bottom: 15px;
   cursor: pointer;
 }
-form {
+.search_form {
   display: flex;
   gap: 1rem;
   align-items: center;

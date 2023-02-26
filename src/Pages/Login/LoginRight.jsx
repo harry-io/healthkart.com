@@ -37,7 +37,7 @@ const LoginRight = () => {
         return;
       }
     }
-    toast("Account not found !");
+    toast.error("Account not found !");
   };
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -34,7 +34,7 @@ const Navbar = () => {
           <img onClick={() => navigate(`/`)} src={image} alt="logo" />
         </div>
         <div className="input">
-          <form>
+          <form className="search_form">
             <FiSearch style={{ fontSize: "1.5rem", color: "#77777e" }} />
             <input
               placeholder="Search for products & brands"
@@ -73,6 +73,7 @@ const Navbar = () => {
         <div className="cartlogo">
           <div id="cart-div">
             <svg
+              onClick={() => navigate("/cart_elements")}
               width="29"
               height="27"
               viewBox="0 0 29 27"
