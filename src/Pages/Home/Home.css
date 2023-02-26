@@ -143,3 +143,16 @@
 .commonDiv {
   padding: 0;
 }
+.cart_count {
+  background-color: coral;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+  margin-left: -12px;
+  margin-top: -18px;
+  font-weight: 600;
+}

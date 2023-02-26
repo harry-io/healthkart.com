@@ -12,6 +12,9 @@ import { logoutUser } from "../../Redux/Auth/actions";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartCount = cart.length;
+
   const dispatch = useDispatch();
   let userName;
   const [hide, sethide] = useState(false);
@@ -113,6 +116,7 @@ const Navbar = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
+            <p className="cart_count">{cartCount}</p>
           </div>
         </div>
       </div>
