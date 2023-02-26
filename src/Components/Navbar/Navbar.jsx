@@ -15,8 +15,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
   let userName;
   const [hide, sethide] = useState(false);
-  const { isAuth } = useSelector((store) => store.authReducer);
-  console.log(isAuth);
+  const { isAuth, userType } = useSelector((store) => store.authReducer);
+  console.log(userType);
   useEffect(() => {
     sethide(false);
   }, []);
@@ -30,6 +30,8 @@ const Navbar = () => {
   return (
     <div>
       <div className="navbar">
+        {/*  */}
+        {/*  */}
         <div className="logo">
           <img onClick={() => navigate(`/`)} src={image} alt="logo" />
         </div>
@@ -51,16 +53,25 @@ const Navbar = () => {
                   <FaUserCircle onClick={() => sethide(!hide)} />
                 </div>
               ) : (
-                <button onClick={() => navigate("/login")}>Login</button>
+                <button
+                  className="login_btn_b"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
               )}
-              {hide && (
+              {hide && isAuth && (
                 <div className="user_dropdown">
                   <Link>{userName}</Link>
-                  <Link to="/admin/inventory">Admin Panel</Link>
+                  {userType === "admin" && (
+                    <Link to="/admin/inventory">Admin Panel</Link>
+                  )}
+
                   <button
                     onClick={() => {
                       dispatch(logoutUser());
                       toast("Looged out successfully !");
+                      sethide(true);
                     }}
                   >
                     Logout
