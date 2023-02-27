@@ -49,3 +49,7 @@ The code for this project can be found in this repository, and we welcome any co
 ![Authentication Vigor](https://user-images.githubusercontent.com/112682355/221494856-c463011f-b2fe-41dc-b6cc-8bb0cb086168.PNG)
 4.Products Page
 ![Products Page Vigor](https://user-images.githubusercontent.com/112682355/221494967-74c0bae9-a508-4360-a938-3610a36004de.PNG)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
