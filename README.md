@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+**Project Name:** Vigor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Team Members:**
+1. Harikesh Kumar
+2. Tanay Vyas
+3. Akshay Bombatkar
+4. Gurpreetsingh Sandha
 
-## Available Scripts
+**Description:**
+Vigor is an Indian online retailer that specializes in providing a wide range of health and wellness products.
+Vigor offers a diverse range of products, including nutritional supplements, vitamins and minerals, protein supplements, herbal and Ayurvedic products, health foods and drinks, and fitness equipment. The company also offers a range of health and wellness services, including personalized diet plans, weight loss programs, and expert advice from certified nutritionists.
 
-In the project directory, you can run:
+The code for this project can be found in this repository, and we welcome any contributions or feedback.
 
-### `npm start`
+**Links**
+1.Deployed Link: https://dirty-parcel-1754.vercel.app/
+2.Original Website:https://www.healthkart.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Tech Stack**
+React
+Redux
+HTML
+CSS
+JSON Server
+Mock API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Screenshots**
+1. Home Page
+![Vigor Homepage](https://user-images.githubusercontent.com/112682355/221494480-e8d44eab-5d84-4265-8674-1fe0fe4dcb72.PNG)
+2.Cart Page
+![Cart Page Vigor](https://user-images.githubusercontent.com/112682355/221494724-fa442395-af8f-4e5c-8e98-58f4a08b9c57.PNG)
+3.Authentication Page
+![Authentication Vigor](https://user-images.githubusercontent.com/112682355/221494856-c463011f-b2fe-41dc-b6cc-8bb0cb086168.PNG)
+4.Products Page
+![Products Page Vigor](https://user-images.githubusercontent.com/112682355/221494967-74c0bae9-a508-4360-a938-3610a36004de.PNG)
