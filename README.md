@@ -6,23 +6,24 @@
 3. Akshay Bombatkar
 4. Gurpreetsingh Sandha
 
-**Description:**
+**Description:** <br>
 Vigor is an Indian online retailer that specializes in providing a wide range of health and wellness products.
 Vigor offers a diverse range of products, including nutritional supplements, vitamins and minerals, protein supplements, herbal and Ayurvedic products, health foods and drinks, and fitness equipment. The company also offers a range of health and wellness services, including personalized diet plans, weight loss programs, and expert advice from certified nutritionists.
 
 The code for this project can be found in this repository, and we welcome any contributions or feedback.
 
-**Links**
-1.Deployed Link: https://dirty-parcel-1754.vercel.app/
+**Links** <br>
+1.Deployed Link: https://dirty-parcel-1754.vercel.app/ <br>
 2.Original Website:https://www.healthkart.com/
 
 **Tech Stack**
-React
-Redux
-HTML
-CSS
-JSON Server
-Mock API
+* React
+* Redux
+* Chakra UI
+* HTML
+* CSS
+* JSON Server
+* Mock API
 
 **Screenshots**
 1. Home Page
