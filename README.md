@@ -25,6 +25,21 @@ The code for this project can be found in this repository, and we welcome any co
 * JSON Server
 * Mock API
 
+## Pages and Features
+
+- `Home Page`: Carousel Slider
+- `Sign-Up Page`: Sign-Up details stored to Database.
+- `Sign-In Page`: Sign-In details authentication to check whether user's mobile number and password match with the database.
+- `Product Category Page`: Fetching products from database and appending on this page.
+- `Cart Page`: User can see products added in the cart and remove a product from his cart.
+- `Wishlist Page`: User can see products added to the wishlist, add products to cart or remove a product from wishlist.
+- `Search list` : List of all items which match with search input
+- `Checkout Page`: User can add the delivery address.
+- `Payment Page`: User can add their payment details.
+- `Order Successful Page` : This page generates random order ID.
+- `Admin Page` : Admin user can be able to perform CRUD operations .
+
+
 **Screenshots**
 1. Home Page
 ![Vigor Homepage](https://user-images.githubusercontent.com/112682355/221494480-e8d44eab-5d84-4265-8674-1fe0fe4dcb72.PNG)
