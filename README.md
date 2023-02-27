@@ -50,6 +50,16 @@ The code for this project can be found in this repository, and we welcome any co
 4.Products Page
 ![Products Page Vigor](https://user-images.githubusercontent.com/112682355/221494967-74c0bae9-a508-4360-a938-3610a36004de.PNG)
 
+## Contact
+
+If you want to contact me, you can reach me through below handles.
+
+
+[![linkedin](https://img.shields.io/badge/Harikesh_Kumar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harikesh-kumar-572a9923a/)
+[![Github](https://img.shields.io/badge/Harikesh_Kumar-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/harry-io)
+
+© 2023 Team Vigor
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
