@@ -36,7 +36,6 @@ The code for this project can be found in this repository, and we welcome any co
 - `Search list` : List of all items which match with search input
 - `Checkout Page`: User can add the delivery address.
 - `Payment Page`: User can add their payment details.
-- `Order Successful Page` : This page generates random order ID.
 - `Admin Page` : Admin user can be able to perform CRUD operations .
 
 
