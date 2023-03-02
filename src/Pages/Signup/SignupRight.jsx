@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { MdError, MdDoneAll } from "react-icons/md";
 
 const LoginRight = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const LoginRight = () => {
   //
   const [creds, setCreds] = useState([]);
   //
-
+  const [valid, setValid] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -121,6 +122,10 @@ const LoginRight = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Valid>
+          <FaStarOfLife style={{ color: "#00b5b7" }} />
+          <p>Password should be more than 7 characters.</p>
+        </Valid>
         <Select value={userType} onChange={(e) => setUserType(e.target.value)}>
           <option value="user">User Type</option>
           <option value="user">User</option>
@@ -275,3 +280,12 @@ const LabelB = styled.label`
   flex-direction: column;
   align-items: center;
 `;
+//
+const Valid = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+  color: #77777e;
+`;
+//

@@ -8,6 +8,7 @@ import { loginSuccess } from "../../Redux/Auth/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import { MdError, MdDoneAll } from "react-icons/md";
 
 const LoginRight = () => {
   const store = useSelector((store) => store.authReducer);
@@ -19,6 +20,7 @@ const LoginRight = () => {
   const [password, setPassword] = useState("");
   const [credData, setCredData] = useState([]);
   // https://cute-gold-agouti-coat.cyclic.app/
+  const [valid, setValid] = useState(true);
   //
   useEffect(() => {
     setDisable(true);
@@ -28,16 +30,20 @@ const LoginRight = () => {
   }, [password]);
   //
   const matchData = (data) => {
-    for (let key in data) {
-      if (data[key].email === email && data[key].password === password) {
-        dispatch(loginSuccess(data[key]));
-        setDisable(false);
-        toast("logged in");
-        navigate("/");
-        return;
+    if (password.length >= 8) {
+      for (let key in data) {
+        if (data[key].email === email && data[key].password === password) {
+          dispatch(loginSuccess(data[key]));
+          setDisable(false);
+          toast("logged in");
+          navigate("/");
+          return;
+        }
       }
+      toast.error("Account not found !");
+    } else {
+      toast("Password must be almost 8 characters !");
     }
-    toast.error("Account not found !");
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,6 +74,12 @@ const LoginRight = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        <Valid>
+          <FaStarOfLife style={{ color: "#00b5b7" }} />
+          <p>Password should be more than 7 characters.</p>
+        </Valid>
+
         <Button disabled={disable}>LOGIN</Button>
 
         <Desc>
@@ -165,6 +177,15 @@ const InputPwd = styled.input`
     border: 1px solid #00b5b7;
   }
 `;
+//
+const Valid = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+  color: #77777e;
+`;
+//
 const Button = styled.button`
   height: 51px;
   border-radius: 10px;
