@@ -11,16 +11,38 @@ const LoginRight = () => {
   const navigate = useNavigate();
   const store = useSelector((store) => store);
   console.log(store);
+  //
+  const [creds, setCreds] = useState([]);
+  //
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [userType, setUserType] = useState("");
-  const [disable, setDisable] = useState(true);
-
+  const [disable, setDisable] = useState(false);
   //
+  //
+  const checkIfExists = (data, email) => {
+    console.log(email);
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].email === email) {
+        return true;
+      }
+    }
+    return false;
+  };
+  //
+  //
+  useEffect(() => {
+    axios
+      .get(`https://63f874bc1dc21d5465bf9ff4.mockapi.io/vigor`)
+      .then((res) => setCreds(res.data));
+  }, []);
+  //
+
   const handleChange = (e) => {
     let actualImage = e.target.files[0];
-
+    //
     //
     let form = new FormData();
     form.append("image", actualImage);
@@ -53,17 +75,35 @@ const LoginRight = () => {
     };
     console.log(userDetails);
     //
-    axios
-      .post(`https://63f874bc1dc21d5465bf9ff4.mockapi.io/vigor`, userDetails)
-      .then((res) => {
-        toast("Account created successfully !");
-        navigate("/login");
-      })
-      .catch((err) => console.log(err));
-    setEmail("");
-    setImageUrl("");
-    setPassword("");
-    setUserType("");
+    if (password.length >= 8) {
+      if (!checkIfExists(creds, email)) {
+        axios
+          .post(
+            `https://63f874bc1dc21d5465bf9ff4.mockapi.io/vigor`,
+            userDetails
+          )
+          .then((res) => {
+            toast("Account created successfully !");
+            navigate("/login");
+          })
+          .catch((err) => console.log(err));
+        setEmail("");
+        setImageUrl("");
+        setPassword("");
+        setUserType("");
+      } else {
+        toast("Account already exists !");
+      }
+    } else {
+      toast.error("Password must be of atleast 8 characters.");
+    }
+    //
+
+    //
+
+    //
+
+    //
   };
   return (
     <SignupRightMain>

@@ -25,6 +25,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.6",
+    "vercel": "^28.16.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
