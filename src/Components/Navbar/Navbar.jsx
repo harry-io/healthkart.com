@@ -10,6 +10,7 @@ import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../Redux/Auth/actions";
 import { toast } from "react-toastify";
+import Search from "./search";
 
 const Navbar = () => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -38,15 +39,16 @@ const Navbar = () => {
         <div className="logo">
           <img onClick={() => navigate(`/`)} src={image} alt="logo" />
         </div>
-        <div className="input">
+        {/* <div className="input">
           <form className="search_form">
             <FiSearch style={{ fontSize: "1.5rem", color: "#77777e" }} />
             <input
-              placeholder="Search for products & brands"
-              //  onClick={() => navigate('/Search')}
+            placeholder="Search for products & brands"
+            //  onClick={() => navigate('/Search')}
             />
           </form>
-        </div>
+        </div> */}
+        <Search />
 
         <div className="loginbtn">
           <div className="LoginPopup">

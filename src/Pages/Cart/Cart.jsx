@@ -66,7 +66,7 @@ const Cart = () => {
          </Text>
 
          {cartData.map((item, index) => (
-          <Flex key={index} alignItems="center" mb="3">
+          <Flex key={index}  alignItems="center" mb="3">
             <Box flex="1">
               <Text fontWeight="bold">Title:</Text>
               <Text fontSize="12px">{item.Title}</Text>
@@ -107,7 +107,7 @@ const Cart = () => {
         </Box>
       </Box>
       {/* SUMMARY BOX */}
-      <Box w="30%">
+      <Box w="30%" >
         <Box bg="rgb(255, 255, 255)" h="40vh" borderRadius="lg" p="4" color="#494953" textAlign="left" ml="20px">
         <strong> Order Summary</strong>  
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>  <Text pt="30px">Total MRP :  </Text> <Text pt="30px">{totalPrice}₹</Text></div> 
