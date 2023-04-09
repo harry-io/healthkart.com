@@ -119,6 +119,7 @@ export const SinglePage = () => {
             </div>
           </div>
           <div className={styles.buttons}>
+           
             <button
               className={styles.minus}
               onClick={() => setCount(count - 1)}  >
@@ -145,7 +146,11 @@ export const SinglePage = () => {
 
         </div>
       </div>
+      
+      {/* weight div */}
       <div className={styles.weights}>
+
+        {/* left flex div column-flex*/}
             <div className={styles.prodBene}>
                 <div className={styles.helps}>
                     <h4>Product Benefits</h4>
@@ -181,6 +186,8 @@ export const SinglePage = () => {
                     </div>
                 </div>
             </div>
+
+          {/* kilo right flex div */}
             <div className={styles.kilo}>
                 <div className={styles.convert}>
                     <div className={styles.convertTop}>
@@ -190,7 +197,7 @@ export const SinglePage = () => {
                         <button className={styles.lb} onClick={() => setWeight(false)}>LB</button>
                     </div>
                     <div className={styles.convertBottom}>
-                    <div>
+                        <div>
                           {
                             weight == true ? "5Kg" : "11LB"
                           }
