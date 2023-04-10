@@ -26,6 +26,8 @@ import styles from "./SinglePage.module.css";
 import { FaSadCry } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Navbar from "../../Components/Navbar/Navbar";
+import {Footer} from "../../Components/Footer/Footer";
+
 
 
 export const SinglePage = () => {
@@ -74,7 +76,7 @@ export const SinglePage = () => {
 
   return (
       <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={styles.main}>
         <div className={styles.images}>
 
@@ -239,9 +241,9 @@ export const SinglePage = () => {
                       </div>
                 </div>
             </div>
-    </div>
-   
-   
+      </div>
+
+     
      </div>
   )
 }
