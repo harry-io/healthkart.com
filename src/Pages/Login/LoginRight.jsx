@@ -21,14 +21,36 @@ const LoginRight = () => {
   const [credData, setCredData] = useState([]);
   // https://cute-gold-agouti-coat.cyclic.app/
   const [valid, setValid] = useState(true);
+  let isvalidEmail=false;
+  let isValidPass=false;
+
+ 
   //
+  // validate email id
+  const isError = email === ''
+
+  if(email.includes("@gmail.com" || "@outlook.com" || "yaho.com" ))
+  {
+    isvalidEmail=true;
+   
+  }
+  else{
+    console.log("Not valid ")
+  }
+  if(password.length>=7)
+  {
+    isValidPass=true;
+  }
+  // // validatore user input
   useEffect(() => {
     setDisable(true);
-    if (password.length > 7) {
+    if (password.length >= 7 && email.includes("@gmail.com" || "@outlook.com" || "yahoo.com" )) {
       setDisable(false);
     }
-  }, [password]);
-  //
+  }, [password,email]);
+
+
+  // //data validate from serverside
   const matchData = (data) => {
     if (password.length >= 8) {
       for (let key in data) {
@@ -68,17 +90,21 @@ const LoginRight = () => {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
+        {!isvalidEmail?<Valid>
+        <FaStarOfLife style={{ color: "#00b5b7" }} />
+        <p>Valid mail Id required.</p>
+      </Valid>:""}
         <Label>Password</Label>
         <InputPwd
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-
+        {isValidPass?
         <Valid>
           <FaStarOfLife style={{ color: "#00b5b7" }} />
           <p>Password should be more than 7 characters.</p>
-        </Valid>
+        </Valid>:""}
 
         <Button disabled={disable}>LOGIN</Button>
 

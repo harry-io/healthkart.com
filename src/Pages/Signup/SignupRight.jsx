@@ -7,7 +7,15 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { MdError, MdDoneAll } from "react-icons/md";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from '@chakra-ui/react'
 
+
+//right part
 const LoginRight = () => {
   const navigate = useNavigate();
   const store = useSelector((store) => store);
@@ -21,8 +29,31 @@ const LoginRight = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [userType, setUserType] = useState("");
   const [disable, setDisable] = useState(false);
+  const [isUpload, setUpload]=useState(false);
+  const [isReady, setReady]=useState(false);
+  let isvalidEmail=false;
+  let isValidPass=false;
+
+ 
   //
-  //
+  // validate email id
+  const isError = email === ''
+
+  if(email.includes("@gmail.com" || "@outlook.com" || "yaho.com" ))
+  {
+    isvalidEmail=true;
+   
+  }
+  else{
+    console.log("Not valid ")
+  }
+  if(password.length>=7)
+  {
+    isValidPass=true;
+  }
+
+  
+  //checking filed are presense
   const checkIfExists = (data, email) => {
     console.log(email);
     for (let i = 0; i < data.length; i++) {
@@ -32,6 +63,8 @@ const LoginRight = () => {
     }
     return false;
   };
+
+  
   //
   //
   useEffect(() => {
@@ -41,6 +74,8 @@ const LoginRight = () => {
   }, []);
   //
 
+
+  //user profile uploader
   const handleChange = (e) => {
     let actualImage = e.target.files[0];
     //
@@ -54,11 +89,21 @@ const LoginRight = () => {
         form
       )
       .then((res) => setImageUrl(res.data.data.display_url))
-      .then(() => setDisable(false));
+      .then(() => setUpload(true));
   };
-  //
+
+
+  //client side validation 
   useEffect(() => {
     setDisable(true);
+    if (password.length >= 7 && email.includes("@gmail.com" || "@outlook.com" || "yahoo.com" ) && isUpload) {
+      setDisable(false);
+    }
+  }, [password,email, isUpload]);  //update dependacies wise
+  
+  // setting initial state variables
+  useEffect(() => {
+   setDisable(true)
     setEmail("");
     setImageUrl("");
     setPassword("");
@@ -110,32 +155,57 @@ const LoginRight = () => {
     <SignupRightMain>
       <Form onSubmit={handleSubmit}>
         <FormHeading>Signup</FormHeading>
-        <Label>Email</Label>
+        <Label>Email*</Label>
         <Input
           type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Label>Password</Label>
+         {!isError && isvalidEmail ? (
+        <label>
+          Enter the email you'd like to receive the newsletter on.
+        </label>
+      ) : (
+        <Valid>
+        <FaStarOfLife style={{ color: "#00b5b7" }} />
+        <p>Valid mail Id required.</p>
+      </Valid>
+      )}
+    
+    {/* //password field */}
+        <Label>Password*</Label>
         <InputPwd
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+         {isValidPass ? (
+        <label>
+          
+        </label>
+      ) : (
         <Valid>
-          <FaStarOfLife style={{ color: "#00b5b7" }} />
-          <p>Password should be more than 7 characters.</p>
-        </Valid>
+        <FaStarOfLife style={{ color: "#00b5b7" }} />
+        <p>Password should be more than 7 characters.</p>
+      </Valid>
+      )}
+        
+        {/* user selectore */}
         <Select value={userType} onChange={(e) => setUserType(e.target.value)}>
           <option value="user">User Type</option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </Select>
+
+
+        {/* profile image uplaoder */}
         <LabelB>
-          <InputImage type="file" onChange={handleChange} />
-          Choose Image for your profile picture
+          <InputImage  type="file" onChange={handleChange} />
+          {!isUpload?"Choose Image for your profile picture*":"Filed Uploaded sucessfully"}
         </LabelB>
         <Button disabled={disable}>SIGNUP</Button>
+
+        {/* extra info */}
         <Desc>
           <FaStarOfLife style={{ color: "red", marginRight: "5px" }} />
           {`You may receive SMS updates from Healthkart and can opt out at any
@@ -264,6 +334,7 @@ const InputImage = styled.input`
     visibility: hidden;
   }
 `;
+
 const LabelB = styled.label`
   width: 100%;
   margin: auto;

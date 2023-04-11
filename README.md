@@ -13,7 +13,7 @@ Vigor offers a diverse range of products, including nutritional supplements, vit
 The code for this project can be found in this repository, and we welcome any contributions or feedback.
 
 **Links** <br>
-1.Deployed Link: https://dirty-parcel-1754.vercel.app/ <br>
+1.Deployed Link: https://vigor-orcin.vercel.app/ <br>
 2.Original Website:https://www.healthkart.com/
 
 **Tech Stack**
