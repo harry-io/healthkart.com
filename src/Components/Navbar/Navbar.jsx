@@ -162,11 +162,11 @@ const Navbar = () => {
             <div className="dropdown-content1">
               <div>
                 <p>Sports Nutrition &gt;</p>
-                <p>Vitamins & Supplements &gt;</p>
+                {/* <p>Vitamins & Supplements &gt;</p>
                 <p>Ayurveda & Herbs &gt;</p>
                 <p>Health Food & Drinks &gt;</p>
                 <p>fitness &gt;</p>
-                <p>Wellness &gt;</p>
+                <p>Wellness &gt;</p> */}
               </div>
               <div>
                 <p>Proteins</p>
@@ -174,37 +174,41 @@ const Navbar = () => {
 
                 <p onClick={() => navigate("/product_list")}>Whey Protiens</p>
 
-                <p>Beginners Whey Protein</p>
+                {/* <p>Beginners Whey Protein</p>
                 <p>Whey Protein Isolate</p>
                 <p>Raw Whey Proteins</p>
                 <p>Plant Proteins</p>
                 <p>Protein for Women</p>
                 <p>Protein for Blends</p>
                 <p>Casein Proteins</p>
-                <p>Soy Proteins</p>
+                <p>Soy Proteins</p> */}
+               
               </div>
               <div>
                 <p>Gainers</p>
                 <br />
-                <p>Weight Gainers</p>
+                <p style={{color: "red"}}>Comming Soon</p>
+                {/* <p>Weight Gainers</p>
                 <p>Mass Gainers</p>
-                <p>Herbal Gainers</p>
+                <p>Herbal Gainers</p> */}
               </div>
               <div className="Dropdownunder">
                 <p>Protein Foods</p>
                 <br />
-                <p>Peanut Butter</p>
+                <p style={{color: "red"}}>Comming Soon</p>
+                {/* <p>Peanut Butter</p>
                 <p>Muesli</p>
                 <p>Protein Shakes</p>
                 <p>Oats</p>
                 <p>Cereals</p>
                 <p>Granola</p>
                 <p>Protein Bars</p>
-                <p>Protein Water</p>
+                <p>Protein Water</p> */}
               </div>
-              <div className="Dropdownunder">
+              {/* <div className="Dropdownunder">
                 <p>Pre/Post Workout</p>
                 <br />
+                <p style={{color: "red"}}>Comming Soon</p>
                 <p>Pre-Workout</p>
                 <p>Creatine</p>
                 <p>BCAAs</p>
@@ -214,10 +218,11 @@ const Navbar = () => {
                 <p>Nitric Oxide</p>
                 <p>Other Supports</p>
                 <p>Citrulline Malate</p>
-              </div>
-              <div className="Dropdownunder">
+              </div> */}
+              {/* <div className="Dropdownunder">
                 <p>Workout Essentials</p>
                 <br />
+                <p style={{color: "red"}}>Comming Soon</p>
                 <p>Fat Burners</p>
                 <p>Consult Services</p>
                 <p>L Carnitine</p>
@@ -225,11 +230,11 @@ const Navbar = () => {
                 <p>Bodybuilding</p>
                 <p>Pre Hormone</p>
                 <p>ZMA</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
-        <div className="dropdown2">
+        {/* <div className="dropdown2">
           <div className="category-button">
             <svg
               width="20"
@@ -278,7 +283,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="dropdown3">
           <div className="category-button">
             <svg
@@ -329,7 +334,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="dropdown4">
+        {/* <div className="dropdown4">
           <div className="category-button deal-button">
             <img
               class="deal-icon"
@@ -377,8 +382,8 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="category-button">
+        </div> */}
+        {/* <div className="category-button">
           <svg
             width="20"
             height="21"
@@ -414,8 +419,8 @@ const Navbar = () => {
             ></path>
           </svg>
           <p>Blogs</p>
-        </div>
-        <div className="category-button">
+        </div> */}
+        {/* <div className="category-button">
           <svg
             width="14"
             height="15"
@@ -429,52 +434,52 @@ const Navbar = () => {
             ></path>
           </svg>
           <p>Gift Card</p>
-        </div>
-        <div className="dropdown7">
-          <div className="category-button">
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.37202 0.000997242C3.81186 -0.0686701 0.0899012 3.52044 0.00157589 8.08028C-0.0113566 8.74969 0.055548 9.4014 0.193441 10.0264C0.426867 11.0847 0.565641 12.1617 0.565641 13.2455V15.3404C0.565641 15.6614 0.825812 15.9216 1.1468 15.9216H3.2417C4.32547 15.9216 5.40247 16.0604 6.46081 16.2938C7.08582 16.4316 7.73749 16.4986 8.40689 16.4856C12.9667 16.3973 16.5558 12.6755 16.4863 8.1154C16.4183 3.66442 12.823 0.0689429 8.37202 0.000997242Z"
-                fill="#77777E"
-              ></path>
-              <path
-                d="M4.36379 9.95293C5.06898 9.95293 5.64066 9.38125 5.64066 8.67605C5.64066 7.97085 5.06898 7.39917 4.36379 7.39917C3.65859 7.39917 3.08691 7.97085 3.08691 8.67605C3.08691 9.38125 3.65859 9.95293 4.36379 9.95293Z"
-                fill="#EFFBFC"
-              ></path>
-              <path
-                d="M7.97512 9.95293C8.68031 9.95293 9.25199 9.38125 9.25199 8.67605C9.25199 7.97085 8.68031 7.39917 7.97512 7.39917C7.26992 7.39917 6.69824 7.97085 6.69824 8.67605C6.69824 9.38125 7.26992 9.95293 7.97512 9.95293Z"
-                fill="#EFFBFC"
-              ></path>
-              <path
-                d="M11.586 9.95293C12.2912 9.95293 12.8628 9.38125 12.8628 8.67605C12.8628 7.97085 12.2912 7.39917 11.586 7.39917C10.8808 7.39917 10.3091 7.97085 10.3091 8.67605C10.3091 9.38125 10.8808 9.95293 11.586 9.95293Z"
-                fill="#EFFBFC"
-              ></path>
-            </svg>
-            <p>customer Support</p>
-          </div>
-          <div className="dropdown-content7">
-            <div className="support1">
-              <p>Chat with us</p>
-              <p>Email us</p>
-              <p>Ask our Experts</p>
-              <p>Returns policy</p>
-              <p>FAQS</p>
-              <p>Terms & Conditions</p>
+        </div> */}
+          <div className="dropdown7">
+            <div className="category-button">
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.37202 0.000997242C3.81186 -0.0686701 0.0899012 3.52044 0.00157589 8.08028C-0.0113566 8.74969 0.055548 9.4014 0.193441 10.0264C0.426867 11.0847 0.565641 12.1617 0.565641 13.2455V15.3404C0.565641 15.6614 0.825812 15.9216 1.1468 15.9216H3.2417C4.32547 15.9216 5.40247 16.0604 6.46081 16.2938C7.08582 16.4316 7.73749 16.4986 8.40689 16.4856C12.9667 16.3973 16.5558 12.6755 16.4863 8.1154C16.4183 3.66442 12.823 0.0689429 8.37202 0.000997242Z"
+                  fill="#77777E"
+                ></path>
+                <path
+                  d="M4.36379 9.95293C5.06898 9.95293 5.64066 9.38125 5.64066 8.67605C5.64066 7.97085 5.06898 7.39917 4.36379 7.39917C3.65859 7.39917 3.08691 7.97085 3.08691 8.67605C3.08691 9.38125 3.65859 9.95293 4.36379 9.95293Z"
+                  fill="#EFFBFC"
+                ></path>
+                <path
+                  d="M7.97512 9.95293C8.68031 9.95293 9.25199 9.38125 9.25199 8.67605C9.25199 7.97085 8.68031 7.39917 7.97512 7.39917C7.26992 7.39917 6.69824 7.97085 6.69824 8.67605C6.69824 9.38125 7.26992 9.95293 7.97512 9.95293Z"
+                  fill="#EFFBFC"
+                ></path>
+                <path
+                  d="M11.586 9.95293C12.2912 9.95293 12.8628 9.38125 12.8628 8.67605C12.8628 7.97085 12.2912 7.39917 11.586 7.39917C10.8808 7.39917 10.3091 7.97085 10.3091 8.67605C10.3091 9.38125 10.8808 9.95293 11.586 9.95293Z"
+                  fill="#EFFBFC"
+                ></path>
+              </svg>
+              <p>customer Support</p>
             </div>
-            <div className="support2">
-              <p>For Support & Order Enquiries</p>
-              <p>Call us at : 1024-4616444</p>
-              <p>10 AM to 7 PM</p>
+            <div className="dropdown-content7">
+              <div className="support1">
+                <p>Chat with us</p>
+                <p>Email us</p>
+                <p>Ask our Experts</p>
+                <p>Returns policy</p>
+                <p>FAQS</p>
+                <p>Terms & Conditions</p>
+              </div>
+              <div className="support2">
+                <p>For Support & Order Enquiries</p>
+                <p>Call us at : 1024-4616444</p>
+                <p>10 AM to 7 PM</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="category-button">
+        {/* <div className="category-button">
           <svg
             width="20"
             height="20"
@@ -496,7 +501,8 @@ const Navbar = () => {
             ></path>
           </svg>
           <p>Store Locator</p>
-        </div>
+          
+        </div> */}
       </div>
     </div>
   );

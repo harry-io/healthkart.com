@@ -471,7 +471,7 @@ hr {
   }
   /* Dropdown 1  */
   .Dropdownunder {
-    display: none;
+    width: min-content;
   }
   .categoryButton {
     display: flex;
@@ -520,7 +520,7 @@ hr {
 
 @media only screen and (max-width: 760px) {
   .navbar2 {
-    display: none;
+    display:inline-flexbox;
   }
   .loginbtn > button {
     width: 80px;

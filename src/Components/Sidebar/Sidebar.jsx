@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams,useNavigate } from 'react-router-dom';
 import styles from './SidebarCSS.module.css'
+import { Button, ButtonGroup } from '@chakra-ui/react'
+
 
 export const Sidebar = () => {
 
@@ -10,6 +12,7 @@ export const Sidebar = () => {
     const [order, setOrder] = useState(initialOrder || "");
     const [drop,setDrop] = useState(false);
     const [brand,setBrand] = useState(initialState || []);
+    const navigate = useNavigate();
 
     const handleFilter = (e) => {
         let newCat  = [...brand];
@@ -29,6 +32,13 @@ export const Sidebar = () => {
        
     }
 
+    function handleReset()
+    {
+      navigate("/product_list")
+     
+      
+    }
+
     useEffect(() => {
         const params = {
             brand
@@ -41,7 +51,7 @@ export const Sidebar = () => {
   return (
     <div className={styles.container} >
         <h1  > <button className={styles.butt} onClick={handleDrop}>{drop === false ? '+': 'X'}</button>Filters</h1>
-        <div className={ drop === false ? styles.list : styles.list.show } >
+        <div className={ drop === false ? styles.list: styles.list.show } >
            
         <div>  
             <h1>Brands</h1>
@@ -58,23 +68,26 @@ export const Sidebar = () => {
         </div>
         <div onChange={handleSort}>
         
-        <h1>Sort by price</h1>
-        <input
-          type="radio"
-          name="order"
-          value={"asc"}
-          defaultChecked={order === "asc"}
-        />
-        <label>Low - High</label>
-        <br />
-        <input
-          type="radio"
-          name="order"
-          value={"desc"}
-          defaultChecked={order === "desc"}
-        />
-        <label>High - Low</label>
+          <h1>Sort by price</h1>
+          <input
+            type="radio"
+            name="order"
+            value={"asc"}
+            defaultChecked={order === "asc"}
+          />
+          <label>Low - High</label>
+          <br />
+          <input
+            type="radio"
+            name="order"
+            value={"desc"}
+            defaultChecked={order === "desc"}
+          />
+          <label>High - Low</label>
       </div> 
+      <div className='resetbtn'>
+        <Button colorScheme='red' size={["50px","50px","50px"]} onClick={handleReset}>Reset</Button>
+      </div>
         </div>
     </div>
   )

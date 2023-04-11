@@ -47,7 +47,7 @@ export const ProductList = () => {
 
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <Sidebar />
     <div className={styles.container}>
           {

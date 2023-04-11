@@ -7,14 +7,14 @@
     /* margin-top: 50px; */
     /* transition: all 1s cubic-bezier(0,1,0,1); */
     position:fixed;
-    top: 25%;
+    top:25%;
     left: 5%;
     font-size: 0.8rem;
     /* align-items: center; */
     gap: 20px;
 }
 .butt {
-    background-color: transparent;
+    background-color:white;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -39,16 +39,49 @@
 
 }
 
+button{
+    margin-top:2px ;
+    padding: 2px;
+    color: red;
+    border-radius: 20%;
+    border: 1px solid red;
+    
+}
+
+
 @media (min-width:300px) and (max-width:518px) {
     .container {
         width: 20%;
         font-size: 0.6rem;
+        top: 32%;
+        scroll-behavior: auto;
+       background-color: white;
+      
+       
 
     }
 }
 
 @media (min-width:519px) and (max-width:800px) {
     .container {
-       width: 100px;
+       width:20%;
+       top:32%;
+        scroll-behavior: auto;
+       
+      background-color: white;
+        z-index: 1000;
+    }
+}
+
+@media (min-width:801px) and (max-width:1322px) {
+    .container {
+        width:20%;
+        font-size: 0.6rem;
+        top: 32%;
+        scroll-behavior: auto;
+       background-color: white;
+      
+       
+
     }
 }

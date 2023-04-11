@@ -3,10 +3,12 @@ import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
 import { ProductList } from "./Pages/ProductList/ProductList";
 import AllRoutes from "./Routes/AllRoutes";
+import Navbar from "./Components/Navbar/Navbar";
 
 export const App = () => {
   return (
     <div>
+      <Navbar />
       <AllRoutes />
       {/* <StyledToastContainer background /> */}
       <ToastContainer />
