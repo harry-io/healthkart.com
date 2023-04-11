@@ -71,7 +71,7 @@ import {
                 h={[8,10]}
                 backgroundColor={"white"}
                 type='search'
-                placeholder="Search products by proteins, Gainers etc"
+                placeholder="Search products likes proteins, Gainers etc"
                 onChange={handleChange}
                 focusBorderColor="#EEF4FF"
                 

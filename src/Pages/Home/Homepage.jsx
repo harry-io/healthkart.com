@@ -13,7 +13,7 @@ import WhyHealthcart from "../../Components/WhyHealthcart";
 const Homepage = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       {/* //top slider */}
 
       <div class="info-section1">
