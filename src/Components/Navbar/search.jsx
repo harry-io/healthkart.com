@@ -29,7 +29,7 @@ import {
       let res = await axios.get(
         `https://cute-gold-agouti-coat.cyclic.app/${e.target.value}`
       );
-      console.log("serch data",res.data.Title);
+      console.log("serch data",res.data);
       setData(res.data);
     };
   
@@ -71,7 +71,7 @@ import {
                 h={[8,10]}
                 backgroundColor={"white"}
                 type='search'
-                placeholder="Search for products & brands"
+                placeholder="Search products by proteins, Gainers etc"
                 onChange={handleChange}
                 focusBorderColor="#EEF4FF"
                 
@@ -114,8 +114,8 @@ import {
                   alignItems="center"
                   color="#4F585E"
                 >
-                  Showing results for {query}
-                </Box>
+                 Showing results for {query}
+                </Box> 
                 {data.map((el) => (
                   <div
                     key={el._id}
